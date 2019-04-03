@@ -9,7 +9,7 @@ var gulp         = require('gulp'),
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
 		browserSync.init({
-				proxy : "bardin.io",
+				proxy : "sensor.io",
 				notify: false
 		});
 });
