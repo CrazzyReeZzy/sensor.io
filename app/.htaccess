@@ -1,3 +1,5 @@
+ErrorDocument 404 /404.php
+
 <ifModule mod_expires.c>
 
 # Add correct content-type for fonts
