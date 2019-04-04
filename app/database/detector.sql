@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 03 2019 г., 21:53
+-- Время создания: Апр 04 2019 г., 23:41
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -30,35 +30,35 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `detector` (
   `id` int(11) NOT NULL,
-  `Код KKS датчика` varchar(50) DEFAULT NULL,
-  `Оборудование` varchar(50) DEFAULT NULL,
-  `Полное имя параметра` varchar(50) DEFAULT NULL,
-  `Зав Номер` varchar(50) DEFAULT NULL,
-  `Тип датчика` varchar(250) DEFAULT NULL,
-  `ПИ-схема` varchar(250) DEFAULT NULL,
-  `Схема подключения внешних проводок` varchar(250) DEFAULT NULL,
-  `План расположения` varchar(250) DEFAULT NULL,
-  `Установочный чертеж` varchar(250) DEFAULT NULL,
-  `Дата ввода в эксплуатацию` varchar(250) DEFAULT NULL,
-  `Предыдущая поверка` varchar(250) DEFAULT NULL,
-  `Номер протокола поверки` varchar(250) DEFAULT NULL,
-  `Следующая поверка` varchar(250) DEFAULT NULL,
-  `Ед парам` varchar(50) DEFAULT NULL,
-  `Нач диап` varchar(50) DEFAULT NULL,
-  `Кон диап` varchar(50) DEFAULT NULL,
-  `Межповерочный интервал` varchar(50) DEFAULT NULL,
-  `Измеряемый параметр` varchar(50) DEFAULT NULL,
-  `Дата последней поверки, калибровки` varchar(50) DEFAULT NULL,
-  `Поверка/Калибровка` varchar(50) DEFAULT NULL,
-  `Диапазон измерений` varchar(50) DEFAULT NULL
+  `KKS` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Код KKS датчика',
+  `installation` varchar(50) DEFAULT NULL COMMENT 'Оборудование',
+  `Parameter name` varchar(50) DEFAULT NULL COMMENT 'Полное имя параметра',
+  `Factory number` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Зав Номер',
+  `Sensor type` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'Тип датчика',
+  `PI scheme` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'ПИ-схема',
+  `External wiring diagram` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'Схема подключения внешних проводок',
+  `layout plan` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'План расположения',
+  `Installation drawing` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'Установочный чертеж',
+  `Commissioning date` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'Дата ввода в эксплуатацию',
+  `Previous calibration` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'Предыдущая поверка',
+  ` Verification Protocol Number` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'Номер протокола поверки',
+  ` Next verification` varchar(250) DEFAULT 'Параметр не задан' COMMENT 'Следующая поверка',
+  `Unit parameter` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Ед парам',
+  `Beginning of range` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Нач диап',
+  `End of range` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Кон диап',
+  `Intertesting interval` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Межповерочный интервал',
+  `Measured parameter` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Измеряемый параметр',
+  `Date of the last calibration check` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Дата последней поверки, калибровки',
+  `Verification/Calibration` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Поверка/Калибровка',
+  `Measuring range` varchar(50) DEFAULT 'Параметр не задан' COMMENT 'Диапазон измерений'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `detector`
 --
 
-INSERT INTO `detector` (`id`, `Код KKS датчика`, `Оборудование`, `Полное имя параметра`, `Зав Номер`, `Тип датчика`, `ПИ-схема`, `Схема подключения внешних проводок`, `План расположения`, `Установочный чертеж`, `Дата ввода в эксплуатацию`, `Предыдущая поверка`, `Номер протокола поверки`, `Следующая поверка`, `Ед парам`, `Нач диап`, `Кон диап`, `Межповерочный интервал`, `Измеряемый параметр`, `Дата последней поверки, калибровки`, `Поверка/Калибровка`, `Диапазон измерений`) VALUES
-(2, '22LBG11CP001', 'ВК2', 'Давление пара в трубопроводе перед горелкой 1 ', '', 'Элемер-100-ДИ1150 -11-МП3 t1 050 0,6 МПа 42 ШР14 КБуст М20- ГП', '1070.01-010-СУ.01 л. 4', '1070.01-010-СУ.04 л9', '1070.01-010-СУ.05 л4 изм.7', '1070.01-010-СУ.03 л9 изм.2', '16.04.2013', '21.04.2013', '', '', '', '', '', '5', 'Давление', '', 'Подлежит', '... '),
+INSERT INTO `detector` (`id`, `KKS`, `installation`, `Parameter name`, `Factory number`, `Sensor type`, `PI scheme`, `External wiring diagram`, `layout plan`, `Installation drawing`, `Commissioning date`, `Previous calibration`, ` Verification Protocol Number`, ` Next verification`, `Unit parameter`, `Beginning of range`, `End of range`, `Intertesting interval`, `Measured parameter`, `Date of the last calibration check`, `Verification/Calibration`, `Measuring range`) VALUES
+(2, '22LBG11CP001', 'ВК2', 'Давление пара в трубопроводе перед горелкой 1 ', '', 'Элемер-100-ДИ1150 -11-МП3 t1 050 0,6 МПа 42 ШР14 КБуст М20- ГП\r\n', '1070.01-010-СУ.01 л. 4', '1070.01-010-СУ.04 л9', '1070.01-010-СУ.05 л4 изм.7', '1070.01-010-СУ.03 л9 изм.2', '16.04.2013', '21.04.2013', '', '', '', '', '', '5', 'Давление', '', 'Подлежит', '... '),
 (3, '22LBG21CP001', 'ВК2', 'Давление пара в трубопроводе перед горелкой 2 ', '', 'Элемер-100-ДИ1150 -11-МП3 t1 050 0,6 МПа 42 ШР14 КБуст М20- ГП', '1070.01-010-СУ.01 л. 4', '1070.01-010-СУ.04 л9', '1070.01-010-СУ.05 л4 изм.7', '1070.01-010-СУ.03 л9 изм.2', '16.04.2013', '21.04.2013', '', '', '', '', '', '5', 'Давление', '', 'Подлежит', '... '),
 (4, '22LBG31CP001', 'ВК2', 'Давление пара в трубопроводе перед горелкой 3 ', '', 'Элемер-100-ДИ1150 -11-МП3 t1 050 0,6 МПа 42 ШР14 КБуст М20- ГП', '1070.01-010-СУ.01 л. 4', '1070.01-010-СУ.04 л9', '1070.01-010-СУ.05 л4 изм.7', '1070.01-010-СУ.03 л9 изм.2', '16.04.2013', '21.04.2013', '', '', '', '', '', '5', 'Давление', '', 'Подлежит', '... '),
 (5, '22LBG41CP001', 'ВК2', 'Давление пара в трубопроводе перед горелкой 4 ', '', 'Элемер-100-ДИ1150 -11-МП3 t1 050 0,6 МПа 42 ШР14 КБуст М20- ГП', '1070.01-010-СУ.01 л. 4', '1070.01-010-СУ.04 л9', '1070.01-010-СУ.05 л4 изм.7', '1070.01-010-СУ.03 л9 изм.2', '16.04.2013', '21.04.2013', '', '', '', '', '', '5', 'Давление', '', 'Подлежит', '... '),
