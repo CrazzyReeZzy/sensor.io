@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 05 2019 г., 01:37
+-- Время создания: Апр 05 2019 г., 01:40
 -- Версия сервера: 5.6.41
 -- Версия PHP: 5.5.38
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `sensor`
 --
+CREATE DATABASE IF NOT EXISTS `sensor` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `sensor`;
 
 -- --------------------------------------------------------
 
