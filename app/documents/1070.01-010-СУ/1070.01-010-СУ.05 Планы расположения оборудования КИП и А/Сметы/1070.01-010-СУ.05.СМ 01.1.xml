@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<Document ProgramVersion="5.4.4.1801" Generator="GrandSmeta" DocumentType="{2B0470FD-477C-4359-9F34-EEBE36B7D340}"><DbInfo>
+    <Document LocalNumber="1070.01-010-СУ.05.СМ 01.1 выпущена в дополнение к л.с. № 1070.01-010-СУ.05.СМ 01" Caption="1070.01-010-СУ.05.СМ 01.1  кабели КИП и А. Водогрейная котельная. Планы расположения оборудования КИП и А"/>
+    <Object LocalNumber="1070.01-010" Caption="Котельная (установка котла КВГМ-140-150)"/>
+    <Construction LocalNumber="1070.01-Р.Д" Caption="Строительство ТЭЦ «Академическая». 2-й этап строительства (пусковой комплекс 2)"/>
+  </DbInfo>
+  <RegionInfo RegionName="Свердловская область (редакция 2009 г.)" RegionID="4660" Zone84Name="Базовый территориальный район" Zone84ID="1" Zone01Name="Базовый территориальный район" Zone01ID="1"/>
+  <Parameters Options="RoundPos SeparateFot RoundNPBase" BasePrices="2001" BaseCalcVrs="Vr2001" BlockRoundMode="Smart" TempZone="1" MatRoundMode="SignDigitsPreserveInt" MatDigits="4" ItogOptions="SeparateVrs" FirstItogItem="K" ItogExpandTo="NP" TzDigits="2">
+    <Numbering Mode="Sequential" Options="Auto"/>
+    <CommonNK ActiveItems="Vk Ck Mk"/>
+    <CommonPK ActiveItems="Vk Ck Mk"/>
+  </Parameters>
+  <Indexes IndexesMode="None" IndexesLinkMode="Vrs">
+    <OsIndexes Sroy="1" Mont="1" Obor="1" Other="1"/>
+  </Indexes>
+  <RegionalK Options="Percent Base"/>
+  <TerZoneK Options="Base PzAll EmAll"/>
+  <VidRab_Catalog Caption="Основной справочник видов работ">
+    <Vids_Rab Type="Виды работ 2001г">
+      <VidRab_Group Caption="Оборудование" ID="1021">
+        <Vid_Rab Caption="Оборудование" ID="10087" NaclMask="ФОТ" PlanMask="ФОТ" OsColumn="О"/>
+      </VidRab_Group>
+      <VidRab_Group Caption="Монтажные работы" ID="10003">
+        <Vid_Rab Caption="Монтаж оборудования" ID="10057" Nacl="80" NaclMask="ФОТ" Plan="60" PlanMask="ФОТ" OsColumn="М"/>
+        <Vid_Rab Caption="Электромонтажные работы на других объектах" ID="10060" Nacl="95" NaclMask="ФОТ" Plan="65" PlanMask="ФОТ" OsColumn="М"/>
+        <Vid_Rab Caption="Монтаж радиотелевизионного и электронного оборудования" ID="10040" Nacl="92" NaclMask="ФОТ" Plan="65" PlanMask="ФОТ" OsColumn="М"/>
+        <Vid_Rab Caption="Материалы для монтажных работ (по оптовым ценам)" ID="10192" NaclMask="ФОТ" PlanMask="ФОТ" OsColumn="М"/>
+        <Vid_Rab Caption="Материалы для монтажных работ" ID="10092" NaclMask="ФОТ" PlanMask="ФОТ" OsColumn="М"/>
+      </VidRab_Group>
+      <VidRab_Group Caption="Общестроительные работы" ID="0">
+        <Vid_Rab Caption="Защита строительных конструкций и оборудования от коррозии" ID="10020" Nacl="90" NaclMask="ФОТ" Plan="70" PlanMask="ФОТ"/>
+        <Vid_Rab Caption="Наружные сети водопровода, канализации, теплоснабжения, газопровода" ID="10028" Nacl="130" NaclMask="ФОТ" Plan="89" PlanMask="ФОТ" NaclCurr="130" PlanCurr="89"/>
+      </VidRab_Group>
+    </Vids_Rab>
+    <Vids_Rab Type="Виды работ 1984г"/>
+  </VidRab_Catalog>
+  <Koefficients>
+    <K Caption="транспортные расходы (о)" Options="Percent Base Curr" Value_PZ="1,03" Level="1" AllVidRabs="No" AllChapters="No" VrGroupsLinks="(1021)"/>
+    <K Caption="заготовительно-складские расходы (о)" Options="Percent Base Curr" Value_PZ="1,012" Level="2" AllVidRabs="No" AllChapters="No" VrGroupsLinks="(1021)"/>
+    <K Caption="транспортные расходы" Options="Percent Base Curr" Value_MT="1,03" Level="3" AllVidRabs="No" AllChapters="No" ChaptersLinks="(4)" VrsLinks="(10192)"/>
+    <K Caption="заготовительно-складские расходы" Options="Percent Base Curr" Value_MT="1,02" Level="4" AllVidRabs="No" AllChapters="No" ChaptersLinks="(4)" VrsLinks="(10192)"/>
+  </Koefficients>
+  <Chapters>
+    <Chapter Caption="Монтажные работы" SysID="5">
+      <Header Caption="Провода и  кабели"/>
+      <Position Caption="Кабель до 35 кВ по установленным конструкциям и лоткам с креплением на поворотах и в конце трассы, масса 1 м кабеля до 1 кг" SysID="2665" Number="1" Code="ТЕРм08-02-147-01" Units="100 м кабеля" Quantity="окр((17560-17770)*0,6/100;2)" PriceLevel="2001" DBComment="Постан.Правит.Свердл.обл. от 10.11.10 №1616-ПП" DBFlags="TechK" Vr2001="10060">
+        <PriceBase PZ="806,06" OZ="157,18" EM="456,3" ZM="50,35" MT="192,58"/>
+        <Resources>
+          <Tzr Caption="Затраты труда рабочих" Code="1-4-0" Units="чел.час" Quantity="11,6" Attribs="SnipSet" WorkClass="4">
+            <PriceBase Value="13,55"/>
+            <PriceCurr Value="72,76"/>
+          </Tzr>
+          <Tzm Caption="Затраты труда машинистов" Code="2" Units="чел.час" Quantity="2,96" Attribs="SnipSet"/>
+          <Mch Caption="Краны на автомобильном ходу при работе на монтаже технологического оборудования 10 т" Code="021102" Units="маш.-ч" Quantity="0,21" Attribs="SnipSet">
+            <PriceBase Value="172,79" ZM="18,2"/>
+            <PriceCurr Value="927,88"/>
+          </Mch>
+          <Mch Caption="Домкраты гидравлические грузоподъемностью 63 т" Code="030203" Units="маш.-ч" Quantity="2,75" Attribs="SnipSet">
+            <PriceBase Value="2,58"/>
+            <PriceCurr Value="13,85"/>
+          </Mch>
+          <Mch Caption="Лебедки электрические тяговым усилием 156,96 кН (16 т)" Code="030408" Units="маш.-ч" Quantity="2,75" Attribs="SnipSet">
+            <PriceBase Value="141,03" ZM="16,92"/>
+            <PriceCurr Value="757,33"/>
+          </Mch>
+          <Mch Caption="Автомобили бортовые, грузоподъемность до 8 т" Code="400002" Units="маш.-ч" Quantity="0,21" Attribs="SnipSet">
+            <PriceBase Value="119,46"/>
+            <PriceCurr Value="641,5"/>
+          </Mch>
+          <Mat Caption="Проволока стальная низкоуглеродистая разного назначения оцинкованная диаметром 3,0 мм" Code="101-0813" Units="т" Quantity="0,0001" Attribs="SnipSet">
+            <PriceBase Value="10329,2"/>
+            <PriceCurr Value="55467,8"/>
+          </Mat>
+          <Mat Caption="Роли свинцовые марки С1 толщиной 1,0 мм" Code="101-0865" Units="т" Quantity="0,00062" Attribs="SnipSet">
+            <PriceBase Value="43137,5"/>
+            <PriceCurr Value="231648,38"/>
+          </Mat>
+          <Mat Caption="Шурупы с полукруглой головкой 4x40 мм" Code="101-1481" Units="т" Quantity="0,00011" Attribs="SnipSet">
+            <PriceBase Value="13351,8"/>
+            <PriceCurr Value="71699,17"/>
+          </Mat>
+          <Mat Caption="Лента К226" Code="101-2478" Units="100 м" Quantity="0,0245" Attribs="SnipSet">
+            <PriceBase Value="128,52"/>
+            <PriceCurr Value="690,15"/>
+          </Mat>
+          <Mat Caption="Бирки маркировочные" Code="111-0086" Units="100 шт." Quantity="0,1" Attribs="SnipSet">
+            <PriceBase Value="47,59"/>
+            <PriceCurr Value="255,56"/>
+          </Mat>
+          <Mat Caption="Лак битумный БТ-123" Code="113-1786" Units="т" Quantity="0,00072" Attribs="SnipSet">
+            <PriceBase Value="13387,5"/>
+            <PriceCurr Value="71890,88"/>
+          </Mat>
+          <Mat Caption="Припои оловянно-свинцовые бессурьмянистые марки ПОС30" Code="506-1362" Units="кг" Quantity="0,26" Attribs="SnipSet">
+            <PriceBase Value="90,44"/>
+            <PriceCurr Value="485,66"/>
+          </Mat>
+          <Mat Caption="Кнопки монтажные" Code="509-0070" Units="1000 шт." Quantity="0,0208" Attribs="SnipSet">
+            <PriceBase Value="33,32"/>
+            <PriceCurr Value="178,93"/>
+          </Mat>
+          <Mat Caption="Скобы" Code="509-0102" Units="10 шт." Quantity="1,8" Attribs="SnipSet">
+            <PriceBase Value="65,8"/>
+            <PriceCurr Value="353,35"/>
+          </Mat>
+          <Mat Caption="Вспомогательные ненормируемые ресурсы" Code="999-9950" Units="руб." Quantity="3,14" Attribs="SnipSet">
+            <PriceBase Value="1"/>
+            <PriceCurr Value="5,37"/>
+          </Mat>
+        </Resources>
+        <WorksList>
+          <Work Caption="Установка и снятие лебедки."/>
+          <Work Caption="Установка и снятие барабана."/>
+          <Work Caption="Монтаж и демонтаж переговорной связи."/>
+          <Work Caption="Установка и снятие роликов."/>
+          <Work Caption="Прокладка кабеля."/>
+          <Work Caption="Проверка состояния изоляции кабеля до и после прокладки."/>
+          <Work Caption="Маркировка."/>
+        </WorksList>
+      </Position>
+      <Position Caption="Кабель до 35 кВ по установленным конструкциям и лоткам с креплением по всей длине, масса 1 м кабеля до 1 кг" SysID="2999" Number="2" Code="ТЕРм08-02-147-10" Units="100 м кабеля" Quantity="окр((17560-17770)*0,4/100;2)" PriceLevel="2001" DBComment="Постан.Правит.Свердл.обл. от 10.11.10 №1616-ПП" DBFlags="TechK" Vr2001="10060">
+        <PriceBase PZ="1668,15" OZ="238,48" EM="673,35" ZM="75,27" MT="756,32"/>
+        <Resources>
+          <Tzr Caption="Затраты труда рабочих" Code="1-4-0" Units="чел.час" Quantity="17,6" Attribs="SnipSet" WorkClass="4">
+            <PriceBase Value="13,55"/>
+            <PriceCurr Value="72,76"/>
+          </Tzr>
+          <Tzm Caption="Затраты труда машинистов" Code="2" Units="чел.час" Quantity="4,43" Attribs="SnipSet"/>
+          <Mch Caption="Краны на автомобильном ходу при работе на монтаже технологического оборудования 10 т" Code="021102" Units="маш.-ч" Quantity="0,25" Attribs="SnipSet">
+            <PriceBase Value="172,79" ZM="18,2"/>
+            <PriceCurr Value="927,88"/>
+          </Mch>
+          <Mch Caption="Домкраты гидравлические грузоподъемностью 63 т" Code="030203" Units="маш.-ч" Quantity="4,18" Attribs="SnipSet">
+            <PriceBase Value="2,58"/>
+            <PriceCurr Value="13,85"/>
+          </Mch>
+          <Mch Caption="Лебедки электрические тяговым усилием 156,96 кН (16 т)" Code="030408" Units="маш.-ч" Quantity="4,18" Attribs="SnipSet">
+            <PriceBase Value="141,03" ZM="16,92"/>
+            <PriceCurr Value="757,33"/>
+          </Mch>
+          <Mch Caption="Автомобили бортовые, грузоподъемность до 8 т" Code="400002" Units="маш.-ч" Quantity="0,25" Attribs="SnipSet">
+            <PriceBase Value="119,46"/>
+            <PriceCurr Value="641,5"/>
+          </Mch>
+          <Mat Caption="Проволока стальная низкоуглеродистая разного назначения оцинкованная диаметром 3,0 мм" Code="101-0813" Units="т" Quantity="0,0001" Attribs="SnipSet">
+            <PriceBase Value="10329,2"/>
+            <PriceCurr Value="55467,8"/>
+          </Mat>
+          <Mat Caption="Роли свинцовые марки С1 толщиной 1,0 мм" Code="101-0865" Units="т" Quantity="0,0008" Attribs="SnipSet">
+            <PriceBase Value="43137,5"/>
+            <PriceCurr Value="231648,38"/>
+          </Mat>
+          <Mat Caption="Шурупы с полукруглой головкой 4x40 мм" Code="101-1481" Units="т" Quantity="0,00062" Attribs="SnipSet">
+            <PriceBase Value="13351,8"/>
+            <PriceCurr Value="71699,17"/>
+          </Mat>
+          <Mat Caption="Лента К226" Code="101-2478" Units="100 м" Quantity="0,0245" Attribs="SnipSet">
+            <PriceBase Value="128,52"/>
+            <PriceCurr Value="690,15"/>
+          </Mat>
+          <Mat Caption="Бирки маркировочные" Code="111-0086" Units="100 шт." Quantity="0,01" Attribs="SnipSet">
+            <PriceBase Value="47,59"/>
+            <PriceCurr Value="255,56"/>
+          </Mat>
+          <Mat Caption="Лак битумный БТ-123" Code="113-1786" Units="т" Quantity="0,00072" Attribs="SnipSet">
+            <PriceBase Value="13387,5"/>
+            <PriceCurr Value="71890,88"/>
+          </Mat>
+          <Mat Caption="Припои оловянно-свинцовые бессурьмянистые марки ПОС30" Code="506-1362" Units="кг" Quantity="0,25" Attribs="SnipSet">
+            <PriceBase Value="90,44"/>
+            <PriceCurr Value="485,66"/>
+          </Mat>
+          <Mat Caption="Кнопки монтажные" Code="509-0070" Units="1000 шт." Quantity="0,0208" Attribs="SnipSet">
+            <PriceBase Value="33,32"/>
+            <PriceCurr Value="178,93"/>
+          </Mat>
+          <Mat Caption="Скобы" Code="509-0102" Units="10 шт." Quantity="10,2" Attribs="SnipSet">
+            <PriceBase Value="65,8"/>
+            <PriceCurr Value="353,35"/>
+          </Mat>
+          <Mat Caption="Вспомогательные ненормируемые ресурсы" Code="999-9950" Units="руб." Quantity="4,77" Attribs="SnipSet">
+            <PriceBase Value="1"/>
+            <PriceCurr Value="5,37"/>
+          </Mat>
+        </Resources>
+        <WorksList>
+          <Work Caption="Установка и снятие лебедки."/>
+          <Work Caption="Установка и снятие барабана."/>
+          <Work Caption="Монтаж и демонтаж переговорной связи."/>
+          <Work Caption="Установка и снятие роликов."/>
+          <Work Caption="Прокладка кабеля."/>
+          <Work Caption="Проверка состояния изоляции кабеля до и после прокладки."/>
+          <Work Caption="Маркировка."/>
+        </WorksList>
+      </Position>
+      <Position Caption="Присоединение к приборам электрических проводок под винт с изготовлением колец" SysID="2672" Number="3" Code="ТЕРм11-08-001-02" Units="100 концов" Quantity="15,57-17,36" PriceLevel="2001" DBComment="Постан.Правит.Свердл.обл. от 10.11.10 №1616-ПП" DBFlags="TechK" Vr2001="10057">
+        <PriceBase PZ="190,2" OZ="127,56" MT="62,64"/>
+        <Resources>
+          <Tzr Caption="Затраты труда рабочих" Code="1-4-1" Units="чел.час" Quantity="9,27" Attribs="SnipSet" WorkClass="4,1">
+            <PriceBase Value="13,76"/>
+            <PriceCurr Value="73,89"/>
+          </Tzr>
+          <Mat Caption="Канифоль сосновая" Code="101-1963" Units="кг" Quantity="0,019" Attribs="SnipSet">
+            <PriceBase Value="23,8"/>
+            <PriceCurr Value="127,81"/>
+          </Mat>
+          <Mat Caption="Спирт этиловый ректификованный технический, сорт I" Code="101-2354" Units="кг" Quantity="0,029" Attribs="SnipSet">
+            <PriceBase Value="43,5"/>
+            <PriceCurr Value="233,6"/>
+          </Mat>
+          <Mat Caption="Бирки маркировочные пластмассовые" Code="111-0109" Units="100 шт." Quantity="1" Attribs="SnipSet">
+            <PriceBase Value="47,6"/>
+            <PriceCurr Value="255,61"/>
+          </Mat>
+          <Mat Caption="Дихлорэтан технический, сорт I" Code="113-0037" Units="т" Quantity="2E-5" Attribs="SnipSet">
+            <PriceBase Value="15757,99"/>
+            <PriceCurr Value="84620,41"/>
+          </Mat>
+          <Mat Caption="Припои оловянно-свинцовые бессурьмянистые марки ПОС61" Code="506-1360" Units="кг" Quantity="0,077" Attribs="SnipSet">
+            <PriceBase Value="115,97"/>
+            <PriceCurr Value="622,76"/>
+          </Mat>
+          <Mat Caption="Трубка полихлорвиниловая" Code="507-0701" Units="кг" Quantity="0,04" Attribs="SnipSet">
+            <PriceBase Value="38,34"/>
+            <PriceCurr Value="205,89"/>
+          </Mat>
+          <Mat Caption="Вспомогательные ненормируемые ресурсы" Code="999-9950" Units="руб." Quantity="2,55" Attribs="SnipSet">
+            <PriceBase Value="1"/>
+            <PriceCurr Value="5,37"/>
+          </Mat>
+        </Resources>
+      </Position>
+      <Position Caption="Разводка по устройствам и подключение жил кабелей или проводов сечением до 10 мм2" SysID="3007" Number="4" Code="ТЕРм08-03-574-01" Units="100 жил" Quantity="26,43-24,14" PriceLevel="2001" DBComment="Постан.Правит.Свердл.обл. от 10.11.10 №1616-ПП" DBFlags="TechK" Vr2001="10060">
+        <PriceBase PZ="1652,15" OZ="234,7" EM="2,92" ZM="0,18" MT="1414,53"/>
+        <Resources>
+          <Tzr Caption="Затраты труда рабочих" Code="1-4-2" Units="чел.час" Quantity="16,8" Attribs="SnipSet" WorkClass="4,2">
+            <PriceBase Value="13,97"/>
+          </Tzr>
+          <Tzm Caption="Затраты труда машинистов" Code="2" Units="чел.час" Quantity="0,01" Attribs="SnipSet"/>
+          <Mch Caption="Краны на автомобильном ходу при работе на монтаже технологического оборудования 10 т" Code="021102" Units="маш.-ч" Quantity="0,01" Attribs="SnipSet">
+            <PriceBase Value="172,79" ZM="18,2"/>
+            <PriceCurr Value="927,88"/>
+          </Mch>
+          <Mch Caption="Автомобили бортовые, грузоподъемность до 8 т" Code="400002" Units="маш.-ч" Quantity="0,01" Attribs="SnipSet">
+            <PriceBase Value="119,46"/>
+            <PriceCurr Value="641,5"/>
+          </Mch>
+          <Mat Caption="Лаки канифольные, марки КФ-965" Code="101-0501" Units="т" Quantity="0,0001" Attribs="SnipSet">
+            <PriceBase Value="78271,24"/>
+          </Mat>
+          <Mat Caption="Шпагат бумажный" Code="101-1964" Units="кг" Quantity="0,02" Attribs="SnipSet">
+            <PriceBase Value="20,3"/>
+          </Mat>
+          <Mat Caption="Нитки швейные" Code="101-2365" Units="кг" Quantity="0,01" Attribs="SnipSet">
+            <PriceBase Value="142,8"/>
+          </Mat>
+          <Mat Caption="Лента К226" Code="101-2478" Units="100 м" Quantity="0,1" Attribs="SnipSet">
+            <PriceBase Value="128,52"/>
+            <PriceCurr Value="690,15"/>
+          </Mat>
+          <Mat Caption="Лента липкая изоляционная на поликасиновом компаунде марки ЛСЭПЛ, шириной 20-30 мм, толщиной от 0,14 до 0,19 мм" Code="101-2493" Units="кг" Quantity="0,2" Attribs="SnipSet">
+            <PriceBase Value="200,94"/>
+            <PriceCurr Value="1079,05"/>
+          </Mat>
+          <Mat Caption="Бирки-оконцеватели" Code="111-0087" Units="100 шт." Quantity="1,02" Attribs="SnipSet">
+            <PriceBase Value="67,72"/>
+          </Mat>
+          <Mat Caption="Припои оловянно-свинцовые бессурьмянистые марки ПОС30" Code="506-1362" Units="кг" Quantity="0,08" Attribs="SnipSet">
+            <PriceBase Value="90,44"/>
+            <PriceCurr Value="485,66"/>
+          </Mat>
+          <Mat Caption="Наконечники кабельные для электротехнических установок" Code="509-0038" Units="шт." Quantity="102" Attribs="SnipSet">
+            <PriceBase Value="12,38"/>
+            <PriceCurr Value="66,48"/>
+          </Mat>
+          <Mat Caption="Кнопки монтажные" Code="509-0070" Units="1000 шт." Quantity="0,1" Attribs="SnipSet">
+            <PriceBase Value="33,32"/>
+            <PriceCurr Value="178,93"/>
+          </Mat>
+          <Mat Caption="Вазелин технический" Code="509-1210" Units="кг" Quantity="0,1" Attribs="SnipSet">
+            <PriceBase Value="47,39"/>
+          </Mat>
+          <Mat Caption="Вспомогательные ненормируемые ресурсы" Code="999-9950" Units="руб." Quantity="4,69" Attribs="SnipSet">
+            <PriceBase Value="1"/>
+            <PriceCurr Value="5,37"/>
+          </Mat>
+        </Resources>
+        <WorksList>
+          <Work Caption="Комплектование проводов."/>
+          <Work Caption="Присоединение."/>
+        </WorksList>
+      </Position>
+      <Position Caption="Конструкция сварная" SysID="3050" Number="5" Code="ТЕРм08-02-152-03" Units="1 т" Quantity="окр(0,116-0,0691;3)" PriceLevel="2001" DBComment="Постан.Правит.Свердл.обл. от 10.11.10 №1616-ПП" DBFlags="TechK" Vr2001="10060">
+        <PriceBase PZ="18899,78" OZ="609,75" EM="733,43" ZM="37,13" MT="17556,6"/>
+        <Resources>
+          <Tzr Caption="Затраты труда рабочих" Code="1-4-0" Units="чел.час" Quantity="45" Attribs="SnipSet" WorkClass="4">
+            <PriceBase Value="13,55"/>
+            <PriceCurr Value="72,76"/>
+          </Tzr>
+          <Tzm Caption="Затраты труда машинистов" Code="2" Units="чел.час" Quantity="2,04" Attribs="SnipSet"/>
+          <Mch Caption="Краны на автомобильном ходу при работе на монтаже технологического оборудования 10 т" Code="021102" Units="маш.-ч" Quantity="2,04" Attribs="SnipSet">
+            <PriceBase Value="172,79" ZM="18,2"/>
+            <PriceCurr Value="927,88"/>
+          </Mch>
+          <Mch Caption="Установки для сварки ручной дуговой (постоянного тока)" Code="040502" Units="маш.-ч" Quantity="15,3" Attribs="SnipSet">
+            <PriceBase Value="8,97"/>
+          </Mch>
+          <Mch Caption="Автомобили бортовые, грузоподъемность до 8 т" Code="400002" Units="маш.-ч" Quantity="2,04" Attribs="SnipSet">
+            <PriceBase Value="119,46"/>
+            <PriceCurr Value="641,5"/>
+          </Mch>
+          <Mat Caption="Портландцемент общестроительного назначения бездобавочный, марки 400" Code="101-1305" Units="т" Quantity="9E-5" Attribs="SnipSet">
+            <PriceBase Value="630,7"/>
+          </Mat>
+          <Mat Caption="Патроны для пристрелки" Code="101-1699" Units="10 шт." Quantity="37,4" Attribs="SnipSet">
+            <PriceBase Value="25,12"/>
+          </Mat>
+          <Mat Caption="Электроды диаметром 4 мм Э42А" Code="101-1924" Units="кг" Quantity="1,52" Attribs="SnipSet">
+            <PriceBase Value="11,66"/>
+          </Mat>
+          <Mat Caption="Дюбели для пристрелки стальные" Code="101-3911" Units="10 шт." Quantity="37,4" Attribs="SnipSet">
+            <PriceBase Value="9,04"/>
+          </Mat>
+          <Mat Caption="Лак битумный БТ-123" Code="113-1786" Units="т" Quantity="0,0078" Attribs="SnipSet">
+            <PriceBase Value="13387,5"/>
+            <PriceCurr Value="71890,88"/>
+          </Mat>
+          <Mat Caption="Конструкции стальные индивидуальные решетчатые сварные массой до 0,1 т" Code="201-0843" Units="т" Quantity="1" Attribs="SnipSet">
+            <PriceBase Value="16144,61"/>
+          </Mat>
+          <Mat Caption="Вспомогательные ненормируемые ресурсы" Code="999-9950" Units="руб." Quantity="12,2" Attribs="SnipSet">
+            <PriceBase Value="1"/>
+            <PriceCurr Value="5,37"/>
+          </Mat>
+        </Resources>
+        <WorksList>
+          <Work Caption="Изготовление."/>
+          <Work Caption="Установка."/>
+          <Work Caption="Окраска."/>
+        </WorksList>
+      </Position>
+    </Chapter>
+    <Chapter Caption="Материалы, не учтенные в цене монтажа" SysID="4" IndexCode="1">
+      <Header Caption="Кабели и провода"/>
+      <Position Caption="Кабель контрольный с медными жилами с ПВХ изоляцией в ПВХ оболочке, не распространяющий горение, экранированный, с низким дымовыделением, сечением: КВВГЭнг-LS  4х1,5 Цена=40791/5,59" SysID="2987" Number="6" Code="ООО ” Холдинг Кабельный Альянс ” г. Екатеринбург от 03.04.2014 без НДС" Units="1000 м" Quantity="2,715-2,815" PriceLevel="2001" Vr2001="10192">
+        <PriceBase PZ="7297,14" MT="7297,14">
+          <Fx MT="40791/5,59"/>
+        </PriceBase>
+      </Position>
+      <Position Caption="Кабель контрольный с медными жилами с ПВХ изоляцией в ПВХ оболочке, не распространяющий горение, экранированный, с низким дымовыделением, сечением: КВВГЭнг-LS  5х1,5 Цена=47289/5,59" SysID="2988" Number="7" Code="ООО ” Холдинг Кабельный Альянс ” г. Екатеринбург от 03.04.2014 без НДС" Units="1000 м" Quantity="2,39-2,29" PriceLevel="2001" Vr2001="10192">
+        <PriceBase PZ="8459,57" MT="8459,57">
+          <Fx MT="47289/5,59"/>
+        </PriceBase>
+      </Position>
+      <Position Caption="Кабель контрольный с медными жилами с ПВХ изоляцией в ПВХ оболочке, не распространяющий горение, экранированный, с низким дымовыделением, сечением: КВВГЭнг-LS  7х1,5 Цена=60558/5,59" SysID="2989" Number="8" Code="ООО ” Холдинг Кабельный Альянс ” г. Екатеринбург от 03.04.2014 без НДС" Units="1000 м" Quantity="2,265-2,365" PriceLevel="2001" Vr2001="10192">
+        <PriceBase PZ="10833,27" MT="10833,27">
+          <Fx MT="60558/5,59"/>
+        </PriceBase>
+      </Position>
+      <Position Caption="Кабель контрольный с медными жилами с ПВХ изоляцией в ПВХ оболочке, не распространяющий горение, экранированный, с низким дымовыделением, сечением: КВВГЭнг-LS  10х1,5 Цена=87977/5,59" SysID="2990" Number="9" Code="ООО ” Холдинг Кабельный Альянс ” г. Екатеринбург от 03.04.2014 без НДС" Units="1000 м" Quantity="1,545-1,495" PriceLevel="2001" Vr2001="10192">
+        <PriceBase PZ="15738,28" MT="15738,28">
+          <Fx MT="87977/5,59"/>
+        </PriceBase>
+      </Position>
+      <Position Caption="Кабель контрольный с медными жилами с ПВХ изоляцией в ПВХ оболочке, не распространяющий горение, экранированный, с низким дымовыделением, сечением: КВВГЭнг-LS  14х1,5 Цена=107839/5,59" SysID="3013" Number="10" Code="ООО ” Холдинг Кабельный Альянс ” г. Екатеринбург от 03.04.2014 без НДС" Units="1000 м" Quantity="2,29-2,24" PriceLevel="2001" Vr2001="10192">
+        <PriceBase PZ="19291,41" MT="19291,41">
+          <Fx MT="107839/5,59"/>
+        </PriceBase>
+      </Position>
+      <Position Caption="Кабель группы Витая пара 2-парный  с изоляцией ПВХ со стекловолокном,  2 х 2 х 0,52 STP2-ST  Цена=20/5,61" SysID="3052" Number="11" Code="ТД ЭлектроКИП от 10.06.2014г. без НДС" Units="м" Quantity="50" PriceLevel="2001" Vr2001="10192">
+        <PriceBase PZ="3,57" MT="3,57">
+          <Fx MT="20/5,61"/>
+        </PriceBase>
+      </Position>
+    </Chapter>
+  </Chapters>
+  <AddZatrats>
+    <AddZatrGlava Glava="8"/>
+    <AddZatrGlava Glava="9"/>
+    <AddZatrGlava Glava="10"/>
+    <AddZatrGlava Glava="11"/>
+    <AddZatrGlava Glava="12"/>
+    <AddZatrGlava Glava="13"/>
+    <AddZatrGlava Glava="14"/>
+    <AddZatrGlava Glava="15"/>
+  </AddZatrats>
+  <OsInfo OSChapter="1" LinkType="LB">
+    <CCChapter Cons="2" Rec="2" Road="2"/>
+  </OsInfo>
+  <GsDocSignatures>
+    <Item Caption="Oснование" ID="100" Value="1070.01-010-СУ.05-С изм.1,2"/>
+    <Item Caption="Составил" ID="300" Value="И.В. Казанцева"/>
+    <Item Caption="Проверил" ID="310" Value="И.В. Казанцева"/>
+  </GsDocSignatures>
+</Document>

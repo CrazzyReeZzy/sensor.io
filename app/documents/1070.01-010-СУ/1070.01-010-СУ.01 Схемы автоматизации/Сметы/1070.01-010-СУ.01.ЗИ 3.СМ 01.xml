@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<Document ProgramVersion="5.4.4.1801" Generator="GrandSmeta" DocumentType="{2B0470FD-477C-4359-9F34-EEBE36B7D340}"><DbInfo>
+    <Document LocalNumber="1070.01-010-СУ.01.ЗИ 3.СМ 01" Caption="1070.01-010-СУ.01.ЗИ 3.СМ 01   пульт аварийного останова (ПАО)"/>
+    <Object LocalNumber="1070.01-010" Caption="Котельная (установка котла КВГМ-140-150)"/>
+    <Construction LocalNumber="1070.01-Р.Д" Caption="Строительство ТЭЦ «Академическая». 2-й этап строительства (пусковой комплекс 2)"/>
+  </DbInfo>
+  <RegionInfo RegionName="Свердловская область (редакция 2009 г.)" RegionID="4660" Zone84Name="Базовый территориальный район" Zone84ID="1" Zone01Name="Базовый территориальный район" Zone01ID="1"/>
+  <Parameters Options="RoundPos SeparateFot RoundNPBase" BasePrices="2001" BaseCalcVrs="Vr2001" BlockRoundMode="Smart" TempZone="1" MatRoundMode="SignDigitsPreserveInt" MatDigits="4" ItogOptions="SeparateVrs" FirstItogItem="K" ItogExpandTo="NP" TzDigits="2">
+    <Numbering Mode="Sequential" Options="Auto"/>
+    <CommonNK ActiveItems="Vk Ck Mk"/>
+    <CommonPK ActiveItems="Vk Ck Mk"/>
+  </Parameters>
+  <Indexes IndexesMode="None" IndexesLinkMode="Vrs">
+    <OsIndexes Sroy="1" Mont="1" Obor="1" Other="1"/>
+  </Indexes>
+  <RegionalK Options="Percent Base"/>
+  <TerZoneK Options="Base PzAll EmAll"/>
+  <VidRab_Catalog Caption="Основной справочник видов работ">
+    <Vids_Rab Type="Виды работ 2001г">
+      <VidRab_Group Caption="Оборудование" ID="1021" IndexCode="2">
+        <Vid_Rab Caption="Оборудование" ID="10087" NaclMask="ФОТ" PlanMask="ФОТ" OsColumn="О" IndexCode="2"/>
+      </VidRab_Group>
+      <VidRab_Group Caption="Монтажные работы" ID="10003" IndexCode="1">
+        <Vid_Rab Caption="Монтаж оборудования" ID="10057" Nacl="80" NaclMask="ФОТ" Plan="60" PlanMask="ФОТ" OsColumn="М"/>
+        <Vid_Rab Caption="Электромонтажные работы на других объектах" ID="10060" Nacl="95" NaclMask="ФОТ" Plan="65" PlanMask="ФОТ" OsColumn="М"/>
+        <Vid_Rab Caption="Монтаж радиотелевизионного и электронного оборудования" ID="10040" Nacl="92" NaclMask="ФОТ" Plan="65" PlanMask="ФОТ" OsColumn="М"/>
+        <Vid_Rab Caption="Материалы для монтажных работ" ID="10092" NaclMask="ФОТ" PlanMask="ФОТ" OsColumn="М"/>
+        <Vid_Rab Caption="Материалы для монтажных работ" ID="10192" NaclMask="ФОТ" PlanMask="ФОТ" OsColumn="М"/>
+      </VidRab_Group>
+      <VidRab_Group Caption="Общестроительные работы" ID="0" IndexCode="1">
+        <Vid_Rab Caption="Защита строительных конструкций и оборудования от коррозии" ID="10020" Nacl="90" NaclMask="ФОТ" Plan="70" PlanMask="ФОТ" IndexCode="1"/>
+        <Vid_Rab Caption="Наружные сети водопровода, канализации, теплоснабжения, газопровода" ID="10028" Nacl="130" NaclMask="ФОТ" Plan="89" PlanMask="ФОТ" NaclCurr="130" PlanCurr="89"/>
+      </VidRab_Group>
+    </Vids_Rab>
+    <Vids_Rab Type="Виды работ 1984г"/>
+  </VidRab_Catalog>
+  <Koefficients>
+    <K Caption="транспортные расходы" Options="Percent Base Curr" Value_PZ="1,03" Level="1" AllVidRabs="No" AllChapters="No" ChaptersLinks="(1)" VrGroupsLinks="(1021)"/>
+    <K Caption="заготовительно-складские расходы" Options="Percent Base Curr" Value_PZ="1,012" Level="2" AllVidRabs="No" AllChapters="No" ChaptersLinks="(1)" VrGroupsLinks="(1021)"/>
+    <K Caption="транспортные расходы" Options="Percent Base Curr" Value_MT="1,03" Level="3" AllVidRabs="No" AllChapters="No" VrsLinks="(10192)"/>
+    <K Caption="заготовительно-складские расходы" Options="Percent Base Curr" Value_MT="1,02" Level="4" AllVidRabs="No" AllChapters="No" VrsLinks="(10192)"/>
+  </Koefficients>
+  <Chapters>
+    <Chapter Caption="Оборудование" SysID="1" IndexCode="2">
+      <Position Caption="Пульт аварийного останова  Цена=176700/3,94" SysID="1540" Number="1" Code="Цена завода 3кв. 2013г. без НДС" Units="шт" Quantity="1" PriceLevel="2001" IndexCode="2" Vr2001="10087">
+        <PriceBase PZ="44847,72" MT="44847,72">
+          <Fx MT="176700/3,94"/>
+        </PriceBase>
+        <PriceCurr MT="178190,56"/>
+      </Position>
+    </Chapter>
+    <Chapter Caption="Монтажные работы" SysID="3" IndexCode="1">
+      <Header Caption="Щиты"/>
+      <Position Caption="Пульт, рабочее место, масса до 0,3 т" SysID="1544" Number="2" Code="ТЕРм11-04-005-01" Units="1 шт." Quantity="1" PriceLevel="2001" IndexCode="1" DBComment="Постан.Правит.Свердл.обл. от 10.11.10 №1616-ПП" DBFlags="TechK" Vr2001="10040">
+        <PriceBase PZ="433,03" OZ="255,13" EM="132,28" ZM="7,83" MT="45,62"/>
+        <Resources>
+          <Tzr Caption="Затраты труда рабочих" Code="1-3-4" Units="чел.час" Quantity="20,2" Attribs="SnipSet" WorkClass="3,4">
+            <PriceBase Value="12,63"/>
+          </Tzr>
+          <Tzm Caption="Затраты труда машинистов" Code="2" Units="чел.час" Quantity="0,43" Attribs="SnipSet"/>
+          <Mch Caption="Краны на автомобильном ходу при работе на монтаже технологического оборудования 10 т" Code="021102" Units="маш.-ч" Quantity="0,43" Attribs="SnipSet">
+            <PriceBase Value="172,79" ZM="18,2"/>
+          </Mch>
+          <Mch Caption="Лебедки электрические тяговым усилием до 5,79 кН (0,59 т)" Code="030401" Units="маш.-ч" Quantity="0,63" Attribs="SnipSet">
+            <PriceBase Value="1,93"/>
+          </Mch>
+          <Mch Caption="Автомобили бортовые, грузоподъемность до 5 т" Code="400001" Units="маш.-ч" Quantity="0,52" Attribs="SnipSet">
+            <PriceBase Value="109,17"/>
+          </Mch>
+          <Mat Caption="Болты с гайками и шайбами оцинкованные, диаметр 6 мм" Code="101-2036" Units="кг" Quantity="0,0356" Attribs="SnipSet">
+            <PriceBase Value="28,47"/>
+          </Mat>
+          <Mat Caption="Болты с гайками и шайбами оцинкованные, диаметр 10 мм" Code="101-2038" Units="кг" Quantity="0,584" Attribs="SnipSet">
+            <PriceBase Value="24,25"/>
+          </Mat>
+          <Mat Caption="Эмаль ХВ-124 защитная, зеленая" Code="113-0227" Units="т" Quantity="2E-5" Attribs="SnipSet">
+            <PriceBase Value="19170,9"/>
+          </Mat>
+          <Mat Caption="Рукав резиновый ОПР 30/25" Code="301-0044" Units="м" Quantity="1" Attribs="SnipSet">
+            <PriceBase Value="9,52"/>
+          </Mat>
+          <Mat Caption="Припои оловянно-свинцовые бессурьмянистые марки ПОС61" Code="506-1360" Units="кг" Quantity="0,01" Attribs="SnipSet">
+            <PriceBase Value="115,97"/>
+          </Mat>
+          <Mat Caption="Наконечники кабельные медные соединительные" Code="509-0042" Units="шт." Quantity="4" Attribs="SnipSet">
+            <PriceBase Value="3,57"/>
+          </Mat>
+          <Mat Caption="Вспомогательные ненормируемые ресурсы" Code="999-9950" Units="руб." Quantity="5,1" Attribs="SnipSet">
+            <PriceBase Value="1"/>
+          </Mat>
+        </Resources>
+      </Position>
+      <Header Caption="Подключение щитов будет учтено в смете на монтаж кабелей КИП и А."/>
+    </Chapter>
+  </Chapters>
+  <AddZatrats>
+    <AddZatrGlava Glava="8"/>
+    <AddZatrGlava Glava="9"/>
+    <AddZatrGlava Glava="10"/>
+    <AddZatrGlava Glava="11"/>
+    <AddZatrGlava Glava="12"/>
+    <AddZatrGlava Glava="13"/>
+    <AddZatrGlava Glava="14"/>
+    <AddZatrGlava Glava="15"/>
+  </AddZatrats>
+  <OsInfo OSChapter="1" LinkType="LB">
+    <CCChapter Cons="2" Rec="2" Road="2"/>
+  </OsInfo>
+  <GsDocSignatures>
+    <Item Caption="Oснование" ID="100" Value="1070.01-010-СУ.01.ЗИ 3"/>
+    <Item Caption="Составил" ID="300" Value="Т.Н. Казанцева"/>
+    <Item Caption="Проверил" ID="310" Value="И.В. Казанцева"/>
+  </GsDocSignatures>
+</Document>
