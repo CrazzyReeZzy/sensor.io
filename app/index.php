@@ -32,15 +32,111 @@
 		</div>
 	</header>
 	<!-- Форма поиска !-->
-	
+	<section class = "control">
+		<form class = "wrap-control" action="index.php" method="POST">
+			<label>
+				KKS<br>
+				<input type="text" name="kks" id="kss">
+			</label>
+			<br>
+			<label>
+				Тип датчика<br>
+				<input type="text" name="type" id="type">
+			</label>
+			<br>
+			<label>
+				Измеряемый параметр<br>
+				<input type="text" name="parameter" id="parameter">
+			</label>
+			<br>
+			<label>
+				Диапазон измерений<br>
+				<input type="text" name="range" id="range">
+			</label>
+			<br>
+			<div class= "btn-seach"><button class="btn" type="submit" >Поиск</button></div>
+		</form>
+	</section>
 	<!-- Подключение к базе данных !-->
 	<?php require_once "php/connection.php"; ?>
 	<!-- Основной скрипт для вывода информации !-->
 	<?php
-		$count = mysqli_query($connection, "SELECT * FROM `detector` ");
+		//Получим данные из формы
+		$kks = $_POST['kks'];
+		$type = $_POST['type'];
+		$parameter = $_POST['parameter'];
+		$range = $_POST['range'];
+		// Сформируем запрос
+		$count = mysqli_query($connection, "SELECT * FROM `detector` WHERE `KKS` LIKE '%$kks%'  AND  `Sensor type` LIKE '%$type%' AND  `Parameter name` LIKE '%$parameter%' ");
+		// Проверим была ли найдена хоты бы одна строчка
+		if ( (mysqli_num_rows($count) == 0 ) ) {
+			echo '<br>Нет результатов!'; // Если ничего не было найдено , выведем нет результатов
+		}
+		?>
+		 <!-- Создадим первую строчку таблицы !-->
+		 <table class = "info">
+			 <tr>
+				 <th>KKS</th>
+				 <th>Оборудование</th>
+				 <th>Полное имя параметра</th>
+				 <th>Заводской номер</th>
+				 <th>Тип датчика</th>
+				 <th>PI-схема</th>
+				 <th>Схема подключения внешних проводок</th>
+				 <th>План расположения</th>
+				 <th>Установочный чертеж</th>
+				 <th>Дата ввода в эксплуатацию</th>
+				 <th>Предыдущая поверка</th>
+				 <th>Номер протокола поверки</th>
+				 <th>Следующая поверка</th>
+				 <th>Ед парам</th>
+				 <th>Нач диап</th>
+				 <th>Кон диап</th>
+				 <th>Межповерочный интервал</th>
+				 <th>Измеряемый параметр</th>
+				 <th>Дата последней поверки, калибровки</th>
+				 <th>Поверка/Калибровка</th>
+				 <th>Диапазон измерений</th>
+			 </tr>
+				<?php
+					while ($name =  mysqli_fetch_assoc($count)) {
+						echo  '<tr>';
+						echo  '<th>' . $name['KKS'] .'</th>';
+						echo  '<th>' . $name['installation']  .'</th>';
+						echo  '<th>' . $name['Parameter name']  .'</th>';
+						echo  '<th>' . $name['Factory number']  .'</th>';
+						echo  '<th>' . $name['Sensor type']  .'</th>';
+						echo  '<th>' . $name['PI scheme']  .'</th>';
+						echo  '<th>' . $name['External wiring diagram']  .'</th>';
+						echo  '<th>' . $name['layout plan']  .'</th>';
+						echo  '<th>' . $name['Installation drawing'] .'</th>';
+						echo  '<th>' . $name['Commissioning date']  .'</th>';
+						echo  '<th>' . $name['Previous calibration']  .'</th>';
+						echo  '<th>' . $name['Verification Protocol Number']  .'</th>';
+						echo  '<th>' . $name['Next verification']  .'</th>';
+						echo  '<th>' . $name['Unit parameter']  .'</th>';
+						echo  '<th>' . $name['Beginning of range']  .'</th>';
+						echo  '<th>' . $name['End of range']  .'</th>';
+						echo  '<th>' . $name['Intertesting interval']  .'</th>';
+						echo  '<th>' . $name['Measured parameter']  .'</th>';
+						echo  '<th>' . $name['Date of the last calibration check']  .'</th>';
+						echo  '<th>' . $name['Verification/Calibration']  .'</th>';
+						echo  '<th>' . $name['Measuring range']  .'</th>';
+						echo '</tr>';
+					}
+				 ?>
+		 </table>
+	
+	<!-- Закроем подключение к базе данных !-->
+	<?php mysqli_close($connection);  ?>
+</body>
+    <!--script !-->
+    <script src="libs/jquery/jquery-1.11.2.min.js"></script>
+</html>
+
+<?php /*
+$count = mysqli_query($connection, "SELECT * FROM `detector` ");
 		while ($name =  mysqli_fetch_assoc($count)) {
-            $name['Full parameter name'] = iconv("Windows-1251","UTF-8",$name['Full parameter name']);
-            //$name1['autor'] = iconv("Windows-1251","UTF-8",$name1['autor']);
 			echo '<br>';
 			echo  $name['id']  . ' -- id' .'<br>';
 			echo  $name['KKS']  . '-- KSS' .'<br>';
@@ -66,10 +162,4 @@
 			echo  $name['Measuring range']  . '-- Диапазон измерений' . '<br>';
 			echo '<br>';
 		}
-	?>
-	<!-- Закроем подключение к базе данных !-->
-	<?php mysqli_close($connection);  ?>
-</body>
-    <!--script !-->
-    <script src="libs/jquery/jquery-1.11.2.min.js"></script>
-</html>
+*/ ?>
