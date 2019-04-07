@@ -34,6 +34,7 @@
 	<!-- Форма поиска !-->
 	<section class = "control">
 		<form class = "wrap-control" action="index.php" method="POST">
+			Поиск
 			<label>
 				KKS<br>
 				<input type="text" name="kks" id="kss">
@@ -50,13 +51,27 @@
 			</label>
 			<br>
 			<label>
-				Диапазон измерений<br>
-				<input type="text" name="range" id="range">
+				Диапазон измерений : <br>
+				Начало диапазона:
+				<input type="number" name="rangebegin" id="rangebegin"><br>
+				Конец диапазона:
+				<input type="number" name="rangeend" id = "rangeend"><br>
+				Единица измерения:
+				<input type="search" list = "unit" name="unitparameter" id="unitparameter">
+				<datalist id = "unit">
+					<option>Па</option>
+					<option>кгс/см2</option>
+					<option>?С</option>
+					<option>т/ч</option>
+					<option>МПа</option>
+					<option>%</option>
+				</datalist>	 
 			</label>
 			<br>
 			<div class= "btn-seach"><button class="btn" type="submit" >Поиск</button></div>
 		</form>
 	</section>
+	<p>*Для перехода в карточку датчика нажмите по ссылке KKS.</p>
 	<!-- Подключение к базе данных !-->
 	<?php require_once "php/connection.php"; ?>
 	<!-- Основной скрипт для вывода информации !-->
@@ -75,7 +90,7 @@
 		?>
 		 <!-- Создадим первую строчку таблицы !-->
 		 <table class = "info">
-			 <tr>
+			 <tr class = "first-str">
 				 <th>KKS</th>
 				 <th>Оборудование</th>
 				 <th>Полное имя параметра</th>
@@ -101,15 +116,15 @@
 				<?php
 					while ($name =  mysqli_fetch_assoc($count)) {
 						echo  '<tr>';
-						echo  '<th>' . $name['KKS'] .'</th>';
+						echo  '<th>' . '<a href = "' . 'pages/cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
 						echo  '<th>' . $name['installation']  .'</th>';
 						echo  '<th>' . $name['Parameter name']  .'</th>';
 						echo  '<th>' . $name['Factory number']  .'</th>';
 						echo  '<th>' . $name['Sensor type']  .'</th>';
-						echo  '<th>' . $name['PI scheme']  .'</th>';
-						echo  '<th>' . $name['External wiring diagram']  .'</th>';
-						echo  '<th>' . $name['layout plan']  .'</th>';
-						echo  '<th>' . $name['Installation drawing'] .'</th>';
+						echo  '<th>' . '<a href = "test.pdf">' . $name['PI scheme'] . '</a>' .'</th>';
+						echo  '<th>' . '<a href = "test.pdf">' . $name['External wiring diagram'] . '</a>' .'</th>';
+						echo  '<th>' . '<a href = "test.pdf">' . $name['layout plan'] . '</a>' .'</th>';
+						echo  '<th>' . '<a href = "test.pdf">'. $name['Installation drawing'] . '</a>' .'</th>';
 						echo  '<th>' . $name['Commissioning date']  .'</th>';
 						echo  '<th>' . $name['Previous calibration']  .'</th>';
 						echo  '<th>' . $name['Verification Protocol Number']  .'</th>';
@@ -133,33 +148,3 @@
     <!--script !-->
     <script src="libs/jquery/jquery-1.11.2.min.js"></script>
 </html>
-
-<?php /*
-$count = mysqli_query($connection, "SELECT * FROM `detector` ");
-		while ($name =  mysqli_fetch_assoc($count)) {
-			echo '<br>';
-			echo  $name['id']  . ' -- id' .'<br>';
-			echo  $name['KKS']  . '-- KSS' .'<br>';
-			echo  $name['installation']  . ' -- Оборудование' . '<br>';
-			echo  $name['Parameter name']  . ' -- Полное имя параметра' . '<br>';
-			echo  $name['Factory number']  . ' -- Заводской номер' .'<br>';
-			echo  $name['Sensor type']  . ' -- Тип датчика' . '<br>';
-			echo  $name['PI scheme']  . '-- PI-схема' .'<br>';
-			echo  $name['External wiring diagram']  . ' -- Схема подключения внешних проводок' . '<br>';
-			echo  $name['layout plan']  . '-- План расположения' . '<br>';
-			echo  $name['Installation drawing'] . '-- Установочный чертеж' . '<br>';
-			echo  $name['Commissioning date']  . ' -- Дата ввода в эксплуатацию' . '<br>';
-			echo  $name['Previous calibration']  . ' - -Предыдущая поверка' . '<br>';
-			echo  $name['Verification Protocol Number']  . '-- Номер протокола поверки'. '<br>';
-			echo  $name['Next verification']  . '-- Следующая поверка'. '<br>';
-			echo  $name['Unit parameter']  . '-- Ед парам' . '<br>';
-			echo  $name['Beginning of range']  . '-- Нач диап' . '<br>';
-			echo  $name['End of range']  . '-- Кон диап' . '<br>';
-			echo  $name['Intertesting interval']  . '-- Межповерочный интервал' . '<br>';
-			echo  $name['Measured parameter']  . ' -- Измеряемый параметр' . '<br>';
-			echo  $name['Date of the last calibration check']  . '-- Дата последней поверки, калибровки	' . '<br>';
-			echo  $name['Verification/Calibration']  . '-- Поверка/Калибровка' . '<br>';
-			echo  $name['Measuring range']  . '-- Диапазон измерений' . '<br>';
-			echo '<br>';
-		}
-*/ ?>

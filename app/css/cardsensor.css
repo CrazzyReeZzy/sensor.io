@@ -1,0 +1,36 @@
+body {
+  color: #000;
+  font-size: 14px; }
+
+.header {
+  width: 100%;
+  height: 100%;
+  background: #000; }
+  .header .wrap-header {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; }
+    .header .wrap-header .navigation {
+      padding-top: 15px;
+      padding-bottom: 15px; }
+      .header .wrap-header .navigation ul {
+        display: flex; }
+        .header .wrap-header .navigation ul li {
+          list-style: none;
+          margin-left: 25px; }
+          .header .wrap-header .navigation ul li a {
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none; }
+            .header .wrap-header .navigation ul li a:hover {
+              border-bottom: 1px solid #fff; }
+    .header .wrap-header .notifications {
+      margin-left: auto; }
+      .header .wrap-header .notifications .icon-notifications {
+        background: url(../img/bell.svg) center center no-repeat/contain;
+        width: 25px;
+        height: 25px;
+        cursor: pointer; }
+        .header .wrap-header .notifications .icon-notifications:hover {
+          animation: bell 1s ease 0s infinite alternate; }

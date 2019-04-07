@@ -51,11 +51,31 @@ body {
       margin-top: 20px; }
       .control .wrap-control .btn-seach .btn {
         padding: 5px 25px; }
+    .control .wrap-control #rangebegin {
+      width: 30px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 10px; }
+    .control .wrap-control #rangeend {
+      width: 30px;
+      margin-left: 17px;
+      margin-bottom: 10px; }
+    .control .wrap-control #unitparameter {
+      width: 70px;
+      margin-left: 0px; }
 
 .info {
   border: 1px solid #000; }
+  .info .first-str:hover {
+    background-color: #bdb9b9; }
+  .info .first-str th {
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000; }
+  .info tr:hover {
+    background-color: #bdb9b9; }
   .info tr th {
-    border: 1px solid #000; }
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000; }
 
 @keyframes bell {
   0% {
