@@ -44,3 +44,28 @@ body{
         }
     }
 }
+
+.info_sensor{
+    width: 100%;
+    .wrap-info_sensor{
+        width: 50%;
+        margin: 0 auto;
+        padding-bottom: 150px;
+        h1{
+            text-align: center;
+        }
+        .table{
+            font-size: 18px;
+            border: 1px solid #000;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            div{
+                display: flex;
+                justify-content: center;
+                border: 1px solid #000;
+                font-size: 18px;
+                padding: 10px 15px;
+            }
+        }
+    }
+}

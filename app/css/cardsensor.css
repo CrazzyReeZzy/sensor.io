@@ -34,3 +34,23 @@ body {
         cursor: pointer; }
         .header .wrap-header .notifications .icon-notifications:hover {
           animation: bell 1s ease 0s infinite alternate; }
+
+.info_sensor {
+  width: 100%; }
+  .info_sensor .wrap-info_sensor {
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 150px; }
+    .info_sensor .wrap-info_sensor h1 {
+      text-align: center; }
+    .info_sensor .wrap-info_sensor .table {
+      font-size: 18px;
+      border: 1px solid #000;
+      display: grid;
+      grid-template-columns: 1fr 1fr; }
+      .info_sensor .wrap-info_sensor .table div {
+        display: flex;
+        justify-content: center;
+        border: 1px solid #000;
+        font-size: 18px;
+        padding: 10px 15px; }
