@@ -1,0 +1,75 @@
+body {
+  color: #000;
+  font-size: 14px; }
+
+.header {
+  width: 100%;
+  height: 100%;
+  background: #000; }
+  .header .wrap-header {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center; }
+    .header .wrap-header .navigation {
+      padding-top: 15px;
+      padding-bottom: 15px; }
+      .header .wrap-header .navigation ul {
+        display: flex; }
+        .header .wrap-header .navigation ul li {
+          list-style: none;
+          margin-left: 25px; }
+          .header .wrap-header .navigation ul li a {
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none; }
+            .header .wrap-header .navigation ul li a:hover {
+              border-bottom: 1px solid #fff; }
+    .header .wrap-header .notifications {
+      margin-left: auto; }
+      .header .wrap-header .notifications .icon-notifications {
+        background: url(../img/bell.svg) center center no-repeat/contain;
+        width: 25px;
+        height: 25px;
+        cursor: pointer; }
+        .header .wrap-header .notifications .icon-notifications:hover {
+          animation: bell 1s ease 0s infinite alternate; }
+
+.form {
+  width: 50%;
+  margin: 0 auto; }
+  .form .form-add {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 25px 25px;
+    margin-top: 25px; }
+    .form .form-add p {
+      text-align: center; }
+    .form .form-add label {
+      margin-bottom: 10px; }
+      .form .form-add label input {
+        display: block; }
+      .form .form-add label .file {
+        width: 300px; }
+    .form .form-add .btn {
+      margin-top: 25px;
+      padding: 10px 15px; }
+    .form .form-add #Measured_parameter_from {
+      display: inline-block;
+      width: 50px; }
+    .form .form-add #Measured_parameter_before {
+      display: inline-block;
+      width: 50px; }
+    .form .form-add #Date_of_the_last_calibration_check {
+      margin-left: 25px;
+      width: 170px; }
+    .form .form-add #Commissioning_date {
+      width: 170px; }
+    .form .form-add #Previous_calibration {
+      width: 170px; }
+    .form .form-add #Next_verification {
+      width: 170px; }

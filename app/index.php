@@ -20,7 +20,7 @@
 			<nav class = "navigation">
 				<ul>
 					<li><a href="index.php" target="_blank" rel="noopener noreferrer">Поиск</a></li>
-					<li><a href="#" target="_blank" rel="noopener noreferrer">Добавить датчик</a></li>
+					<li><a href="pages/addsensor.php" target="_blank" rel="noopener noreferrer">Добавить датчик</a></li>
 					<li><a href="#" target="_blank" rel="noopener noreferrer">Месячный план обслуживания</a></li>
 					<li><a href="#" target="_blank" rel="noopener noreferrer">Годовой план поверки и калибровки</a></li>
 				</ul>
