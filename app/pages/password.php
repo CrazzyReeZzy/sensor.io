@@ -10,7 +10,7 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-touch-icon-114x114.png">
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css"> <!-- Подключение файла стилей.-->
+    <link rel="stylesheet" href="../css/card.css"> <!-- Подключение файла стилей.-->
     <title>Паспорт датчика</title> 
 </head>
 <body>

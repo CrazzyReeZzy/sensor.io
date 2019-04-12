@@ -18,12 +18,12 @@
     <header class = "header" id = "header">
 		<div class="wrap-header">
 			<nav class = "navigation">
-				<ul>
-					<li><a href="../index.php" target="_blank" rel="noopener noreferrer">Поиск</a></li>
-					<li><a href="addsensor.php" target="_blank" rel="noopener noreferrer">Добавить датчик</a></li>
-					<li><a href="#" target="_blank" rel="noopener noreferrer">Месячный план обслуживания</a></li>
-					<li><a href="#" target="_blank" rel="noopener noreferrer">Годовой план поверки и калибровки</a></li>
-				</ul>
+			<ul class="menu">
+				<li><a href="search.php">Поиск</a></li>
+				<li><a href="addsensor.php">Добавить датчик</a></li>
+				<li><a href="#">Месячный план обслуживания</a></li>
+				<li><a href="#">Годовой план поверки и калибровки</a></li>
+  			</ul>
 			</nav>
 			<div class = "notifications">
 				<div class = "icon-notifications" tabindex = "0"></div>

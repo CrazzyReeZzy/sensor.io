@@ -50,67 +50,98 @@ body {
         .header .wrap-header .notifications .icon-notifications:hover {
           animation: bell .5s ease 0s infinite normal; }
 
-.info_sensor {
-  width: 60%;
-  margin: 0 auto;
-  color: #fff;
-  background: #191919; }
-  .info_sensor .wrap-info_sensor {
-    width: 80%;
-    margin: 0 auto;
-    padding-bottom: 150px; }
-    .info_sensor .wrap-info_sensor h1 {
-      padding-top: 50px;
-      text-align: center; }
-    .info_sensor .wrap-info_sensor .table {
-      font-size: 18px;
-      display: grid;
-      grid-template-columns: 1fr 1fr; }
-      .info_sensor .wrap-info_sensor .table div {
+/*.control{
+    width: 350px;
+    margin: 50px auto;
+    .wrap-control{
+        padding: 25px 25px;
+        border: 1px solid #000;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        border-bottom: 1px solid #fff;
-        font-size: 18px;
-        padding: 10px 15px; }
-
-@keyframes bell {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  12% {
-    -webkit-transform: rotate(15deg);
-    -ms-transform: rotate(15deg);
-    transform: rotate(15deg); }
-  24% {
-    -webkit-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    transform: rotate(30deg); }
-  36% {
-    -webkit-transform: rotate(15deg);
-    -ms-transform: rotate(15deg);
-    transform: rotate(15deg); }
-  48% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  60% {
-    -webkit-transform: rotate(-15deg);
-    -ms-transform: rotate(-15deg);
-    transform: rotate(-15deg); }
-  72% {
-    -webkit-transform: rotate(-30deg);
-    -ms-transform: rotate(-30deg);
-    transform: rotate(-30deg); }
-  84% {
-    -webkit-transform: rotate(-15deg);
-    -ms-transform: rotate(-15deg);
-    transform: rotate(-15deg); }
-  100% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg); } }
-
-@keyframes line {
-  0% {
-    background-position-x: 390px; } }
+        align-items: center;
+        label{
+            input[type = "text"]{
+                border:0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid #3498db;
+                padding: 14px 10px;
+                width: 200px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+            }
+        }
+        .btn-seach{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            .btn{
+                padding: 5px 25px;
+            }
+        }
+        #rangebegin{
+            width: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+        #rangeend{
+            width: 30px;
+            margin-left: 17px;
+            margin-bottom: 10px;
+        }
+        #unitparameter{
+            width: 70px;
+            margin-left: 0px;
+        }
+    }
+}
+*/
+.section-form {
+  width: 30%;
+  margin: 100px auto; }
+  .section-form .box {
+    width: 300px;
+    padding: 40px;
+    background: #191919;
+    text-align: center; }
+    .section-form .box h1 {
+      color: white;
+      text-transform: uppercase;
+      font-weight: 500; }
+    .section-form .box input[type="text"], .section-form .box input[type="number"], .section-form .box input[type="search"] {
+      border: 0;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #3498db;
+      padding: 14px 10px;
+      width: 200px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s; }
+    .section-form .box input[type="text"]:focus, .section-form .box input[type="number"], .section-form .box input[type="search"]:focus {
+      width: 280px;
+      border-color: #2ecc71; }
+    .section-form .box input[type="submit"] {
+      border: 0;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #2ecc71;
+      padding: 14px 40px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s;
+      cursor: pointer; }
+      .section-form .box input[type="submit"]:hover {
+        background: #2ecc71; }

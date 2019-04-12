@@ -1,18 +1,65 @@
-@charset "UTF-8";
 body{
-    width: 80%;
-    margin: 0 auto;
-    height: 200vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  background-color: #081920;
+  /* IE9, iOS 3.2+ */
+  /*background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxMDAlIiB5MT0iMTAwJSIgeDI9IjAlIiB5Mj0iMCUiPjxzdG9wIHN0b3AtY29sb3I9IiMxMjM1NDIiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzA1MTExNSIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjAuNTAxIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzA1MTExNiIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjAuOTE1OTk5OTk5OTk5OTk5OSIvPjxzdG9wIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+  */background-image: -webkit-gradient(linear, 100% 100%, 0% 0%,color-stop(0, rgb(18, 53, 66)),color-stop(0.501, rgb(5, 17, 21)),color-stop(0.916, rgb(5, 17, 22)),color-stop(1, rgb(0, 0, 0)));
+  /* Android 2.3 */
+  background-image: -webkit-linear-gradient(bottom right,rgb(18, 53, 66) -0.3%,rgb(5, 17, 21) 50.1%,rgb(5, 17, 22) 91.6%,rgb(0, 0, 0) 100%);
+  /* IE10+ */
+  background-image: linear-gradient(to top left,rgb(18, 53, 66) -0.3%,rgb(5, 17, 21) 50.1%,rgb(5, 17, 22) 91.6%,rgb(0, 0, 0) 100%);
+  background-image: -ms-linear-gradient(bottom right,rgb(18, 53, 66) -0.3%,rgb(5, 17, 21) 50.1%,rgb(5, 17, 22) 91.6%,rgb(0, 0, 0) 100%);
 }
-table {
- 
-   }
-
-.password {
-    margin-top: 100px;
-    width: 100%;
+.box{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #191919;
+  text-align: center;
 }
-.password1 {
-    margin-top: 100px;
-    width: 100%;
+.box h1{
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type = "text"],.box input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+.box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
 }
