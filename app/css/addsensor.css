@@ -105,21 +105,21 @@ body {
 }
 */
 .section-form {
-  width: 40%;
+  width: 70%;
   margin: 100px auto; }
   .section-form .box {
-    width: 500px;
+    width: 100%;
     padding: 40px;
     background: #191919;
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr; }
+    grid-template-columns: 1fr 1fr 1fr 1fr; }
     .section-form .box h1 {
       color: white;
       text-transform: uppercase;
       font-weight: 500;
-      grid-column: 1 / 3; }
-    .section-form .box input[type="text"], .section-form .box input[type="number"], .section-form .box input[type="search"] {
+      grid-column: 1 / 5; }
+    .section-form .box input[type="text"], .section-form .box input[type="number"], .section-form .box input[type="search"], .section-form .box input[type="file"], .section-form .box input[type="date"] {
       border: 0;
       background: none;
       display: block;
@@ -132,6 +132,16 @@ body {
       color: white;
       border-radius: 24px;
       transition: 0.25s; }
+    .section-form .box input[type="date"] {
+      grid-column: 2 / 4;
+      width: 700px; }
+    .section-form .box input[type="file"] {
+      width: 700px;
+      grid-column: 2 / 4; }
+    .section-form .box label {
+      color: #fff;
+      grid-column: 1 / 1;
+      margin-top: 40px; }
     .section-form .box input[type="text"]:focus, .section-form .box input[type="number"], .section-form .box input[type="search"]:focus {
       width: 280px;
       border-color: #2ecc71; }
@@ -148,7 +158,7 @@ body {
       border-radius: 24px;
       transition: 0.25s;
       cursor: pointer;
-      grid-column: 1 / 3; }
+      grid-column: 1 / 5; }
       .section-form .box input[type="submit"]:hover {
         background: #2ecc71; }
 

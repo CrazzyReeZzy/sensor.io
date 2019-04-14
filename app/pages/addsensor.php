@@ -158,28 +158,109 @@
     <section class = "section-form">
 		<form class="box" action="" method="post">
 			<h1>Добавить датчик</h1>
-			<input type="text" name="kks" placeholder="KKS">
-			<input type="text" name="type" placeholder="Оборудование">
-			<input type="text" name="parameter" placeholder="Полное имя параметра">
-			<input type="text" name="" placeholder="Заводской номер">
-            <input type="text" name="unitparameter" placeholder="Тип датчика">
-            <input type="text" name="" id="" placeholder="PI-схема">
-            <input type="text" name="" id="" placeholder="Схема подключения внешних проводок">
-            <input type="text" name="" id="" placeholder="План расположения">
-            <input type="text" name="" id="" placeholder="Установочный чертеж">
-            <input type="text" name="" id="" placeholder="Дата ввода в эксплуатацию">
-            <input type="text" name="" id="" placeholder="Предыдущая поверка">
-            <input type="text" name="" id="" placeholder="Номер протокола поверки">
-            <input type="text" name="" id="" placeholder="Следующая поверка">
-            <input type="text" name="" id="" placeholder="Ед парам">
-            <input type="text" name="" id="" placeholder="Нач диап">
-            <input type="text" name="" id="" placeholder="Кон диап">
-            <input type="text" name="" id="" placeholder="Межповерочный интервал">
-            <input type="text" name="" id="" placeholder="Измеряемый параметр">
-            <input type="text" name="" id="" placeholder="Дата последней поверки, калибровки">
-            <input type="text" name="" id="" placeholder="Поверка/Калибровка">
+			<input type="text" name="kks" placeholder="KKS" required>
+			<input type="text" name="installation" placeholder="Оборудование" required>
+			<input type="text" name="Parameter_name" placeholder="Полное имя параметра" required>
+			<input type="text" name="Factory_number" placeholder="Заводской номер" required>
+            <input type="text" name="Sensor_type" placeholder="Тип датчика" required>
+            <!-- <input type="file" name="" id="" placeholder="PI-схема">
+            <input type="file" name="" id="" placeholder="Схема подключения внешних проводок">
+            <input type="file" name="" id="" placeholder="План расположения">
+            <input type="file" name="" id="" placeholder="Установочный чертеж"> -->
+            <input type="text" name="Verification_Protocol_Number" id="" placeholder="Номер протокола поверки" required>
+            <!-- <input type="date" name="" id="" placeholder="Дата ввода в эксплуатацию">
+            <input type="date" name="" id="" placeholder="Предыдущая поверка">
+            <input type="date" name="" id="" placeholder="Следующая поверка"> -->
+            <input type="text" name="Unit_parameter" id="" placeholder="Ед парам" required>
+            <input type="text" name="Beginning_of_range" id="" placeholder="Нач диап" required>
+            <input type="text" name="End_of_range" id="" placeholder="Кон диап">
+            <input type="text" name="Intertesting_interval" id="" placeholder="Межповерочный интервал" required>
+            <input type="text" name="Measured_parameter" id="" placeholder="Измеряемый параметр" required>
+            <input type="text" name="Verification_Calibration" id="" placeholder="Поверка/Калибровка" required>
+            <input type="text" name="Measuring_range" id="" placeholder="Диапазон измерений" required>
+            <!-- Даты !-->
+            <label for="">Дата ввода в эксплуатацию</label>
+            <input type="date" name="Commissioning_date" id="" placeholder="Дата ввода в эксплуатацию" required>
+            <label for="">Предыдущая поверка</label>
+            <input type="date" name="Previous_calibration" id="" placeholder="Предыдущая поверка" required>
+            <label for="">Следующая поверка</label>
+            <input type="date" name="Next_verification" id="" placeholder="Следующая поверка" required>
+            <label for="">Дата последней поверки, калибровки</label>
+            <input type="date" name="Date_of_the_last_calibration_check" id="" placeholder="Дата последней поверки, калибровки" required>
+            <!-- Файлы !-->
+            <label for="">PI-схема</label>
+            <input type="file" name="PI_scheme" id="" placeholder="PI-схема" required>
+            <label for="">Схема подключения внешних проводок</label>
+            <input type="file" name="External_wiring_diagram" id="" placeholder="Схема подключения внешних проводок" required>
+            <label for="">План расположения</label>
+            <input type="file" name="layout_plan" id="" placeholder="План расположения" required>
+            <label for="">Установочный чертеж</label>
+            <input type="file" name="Installation_drawing" id="" placeholder="Установочный чертеж" required>
 			<input type="submit" name="" value="Добавить">
 		</form>
-	</section>
+    </section>
+    
+    <!-- Подключение к базе данных !-->
+    <?php require_once "../php/connection.php"; ?>
+    <!-- Нужно получить все данные из формы!-->
+    <?php
+        $kks = $_POST['kks'];
+        $installation = $_POST['installation'];
+        $Parameter_name = $_POST['Parameter_name'];
+        $Factory_number = $_POST['Factory_number'];
+        $Sensor_type = $_POST['Sensor_type'];
+        $Verification_Protocol_Number = $_POST['Verification_Protocol_Number'];
+        $Unit_parameter = $_POST['Unit_parameter'];
+        $Beginning_of_range = $_POST['Beginning_of_range'];
+        $End_of_range = $_POST['End_of_range'];
+        $Intertesting_interval = $_POST['Intertesting_interval'];
+        $Measured_parameter = $_POST['Measured_parameter'];
+        $Verification_Calibration = $_POST['Verification_Calibration'];
+        $Commissioning_date = $_POST['Commissioning_date'];
+        $Previous_calibration = $_POST['Previous_calibration'];
+        $Next_verification = $_POST['Next_verification'];
+        $Date_of_the_last_calibration_check = $_POST['Date_of_the_last_calibration_check'];
+        $PI_scheme = $_POST['PI_scheme'];
+        $External_wiring_diagram = $_POST['External_wiring_diagram'];
+        $layout_plan = $_POST['layout_plan'];
+        $Installation_drawing = $_POST['Installation_drawing'];
+        $Measuring_range = $_POST['Measuring_range'];
+    ?>
+    <!-- Создадим sql запрос для добавления в базу данных строки !-->
+    <?php
+        $sql = "INSERT INTO `detector` (
+            `id`, `KKS`, `installation`,
+            `Parameter name`, `Factory number`,
+            `Sensor type`, `PI scheme`,
+            `External wiring diagram`,
+            `layout plan`, `Installation drawing`,
+            `Commissioning date`, `Previous calibration`,
+            `Verification Protocol Number`, 
+            ` Next verification`, `Unit parameter`,
+            `Beginning of range`, `End of range`,
+            `Intertesting interval`, `Measured parameter`,
+            `Date of the last calibration check`,
+            `Verification/Calibration`, `Measuring range`)
+            VALUES (NULL, '$kks', '$installation', '$Parameter_name',
+            '$Factory_number', '$Sensor_type', '$PI_scheme',
+            '$External_wiring_diagram', '$layout_plan', '$Installation_drawing',
+            '$Commissioning_date', '$Previous_calibration', '$Verification_Protocol_Number',
+            '$Next_verification', '$Unit_parameter', '$Beginning_of_range', '$End_of_range',
+            '$Intertesting_interval', '$Measured_parameter', '$Date_of_the_last_calibration_check',
+            '$Verification_Calibration', '$Measuring_range')";
+    ?>
+    <!-- Запустим запрос !-->
+    <?php
+
+        if ($kks == true) {
+            if (mysqli_query($connection, $sql)) {
+                echo "New record created successfully";
+            }else{
+                echo "Error: " . $sql . "<br>" . mysqli_error($connection);
+            }
+        }
+    ?>
+    <!-- Закроем подключение к базе данных !-->
+	<?php mysqli_close($connection);  ?>
 </body>
 </html>

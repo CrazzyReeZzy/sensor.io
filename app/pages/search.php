@@ -91,7 +91,7 @@
 			<input type="text" name="kks" placeholder="KKS">
 			<input type="text" name="type" placeholder="Тип датчика">
 			<input type="text" name="parameter" placeholder="Измеряемый параметр">
-			<input type="text" name="" placeholder="Диапазон измерений">
+			<input type="text" name="range" placeholder="Диапазон измерений">
 			<input type="text" name="unitparameter" placeholder="Единица измерения">
 			<input type="submit" name="" value="Найти">
 		</form>
@@ -106,8 +106,9 @@
 		$type = $_POST['type'];
 		$parameter = $_POST['parameter'];
 		$range = $_POST['range'];
+		$unitparameter = $_POST['unitparameter'];
 		// Сформируем запрос
-		$count = mysqli_query($connection, "SELECT * FROM `detector` WHERE `KKS` LIKE '%$kks%'  AND  `Sensor type` LIKE '%$type%' AND  `Parameter name` LIKE '%$parameter%' ");
+		$count = mysqli_query($connection, "SELECT * FROM `detector` WHERE `KKS` LIKE '%$kks%'  AND  `Sensor type` LIKE '%$type%' AND  `Parameter name` LIKE '%$parameter%' AND  `Unit parameter` LIKE '%$unitparameter%' ");
 		// Проверим была ли найдена хоты бы одна строчка
 		if ( (mysqli_num_rows($count) == 0 ) ) {
 			echo '<br>Нет результатов!'; // Если ничего не было найдено , выведем нет результатов
