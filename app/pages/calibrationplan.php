@@ -66,7 +66,8 @@
                     trim($name['Previous calibration']);
                     $year = substr($name['Previous calibration'],strlen($name['Previous calibration'])-1);
                     $new_year = $year + $name['Intertesting interval'];
-                    echo  '<th>' . 'Через ' . $new_year  . ' лет' .'</th>';
+                    $next_year = substr($name['Previous calibration'],0,strlen($name['Previous calibration'])-1) . $new_year;
+                    echo  '<th>' . $next_year .'</th>';
                 }
             }
 

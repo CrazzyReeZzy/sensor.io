@@ -177,7 +177,7 @@
             <input type="text" name="Intertesting_interval" id="" placeholder="Межповерочный интервал" required>
             <input type="text" name="Measured_parameter" id="" placeholder="Измеряемый параметр" required>
             <input type="text" name="Verification_Calibration" id="" placeholder="Поверка/Калибровка" required>
-            <input type="text" name="Measuring_range" id="" placeholder="Диапазон измерений" required>
+            <!-- <input type="text" name="Measuring_range" id="" placeholder="Диапазон измерений" required> -->
             <!-- Даты !-->
             <label for="">Дата ввода в эксплуатацию</label>
             <input type="date" name="Commissioning_date" id="" placeholder="Дата ввода в эксплуатацию" required>
@@ -224,7 +224,8 @@
         $External_wiring_diagram = $_POST['External_wiring_diagram'];
         $layout_plan = $_POST['layout_plan'];
         $Installation_drawing = $_POST['Installation_drawing'];
-        $Measuring_range = $_POST['Measuring_range'];
+        // Надо высчитать диапазон $Beginning_of_range + $End_of_range
+        $Measuring_range = $Beginning_of_range . '...' . $End_of_range;
     ?>
     <!-- Создадим sql запрос для добавления в базу данных строки !-->
     <?php

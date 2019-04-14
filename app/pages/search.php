@@ -1,3 +1,4 @@
+<?php require_once "../php/connection.php"; ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -30,14 +31,28 @@
 				<div class = "window-notifications">
 					<h2>Уведомления</h2>
 					<div class = "notifications-table">
-						<div>KSS</div>
-						<div>Описание проблемы</div>
-						<div>KSS</div>
-						<div>Описание проблемы</div>
-						<div>KSS</div>
-						<div>Описание проблемы</div>
-						<div>KSS</div>
-						<div>Описание проблемы</div>
+						<!-- Вывод проблем !-->
+						<?php $problem = mysqli_query($connection, "SELECT * FROM `detector` ");?>
+						<?php
+							while ($item =  mysqli_fetch_assoc($problem)) {
+
+								trim($item['Verification/Calibration']);
+								if ($item['Verification/Calibration'] == 'К' || $item['Verification/Calibration'] == 'Подлежит'){
+									if ( strlen($item['Previous calibration']) > 0 ){
+										trim($item['Previous calibration']);
+										$year = substr($item['Previous calibration'],strlen($item['Previous calibration'])-1);
+										$new_year = $year + $item['Intertesting interval'];
+										$next_year = substr($item['Previous calibration'],0,strlen($item['Previous calibration'])-1) . $new_year;
+										$today = date("m.d.y");
+										$today = substr($today,strlen($today)-1);
+										if ($today > $new_year){
+											echo '<div>' . $item['KKS'] . '</div>';
+											echo '<div>' . $next_year . '    <-- Просрочена поверка' . '</div>';
+										}
+									}
+								}
+							}
+						?>
 					</div>
 					<button class = "close">Закрыть</button>
 				</div>
@@ -98,7 +113,7 @@
 	</section>
 	<!-- <p>*Для перехода в карточку датчика нажмите по ссылке KKS.</p> -->
 	<!-- Подключение к базе данных !-->
-	<?php require_once "../php/connection.php"; ?>
+	<?php //require_once "../php/connection.php"; ?>
 	<!-- Основной скрипт для вывода информации !-->
 	<?php
 		//Получим данные из формы
