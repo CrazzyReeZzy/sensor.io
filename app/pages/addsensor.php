@@ -220,10 +220,16 @@
         $Previous_calibration = $_POST['Previous_calibration'];
         $Next_verification = $_POST['Next_verification'];
         $Date_of_the_last_calibration_check = $_POST['Date_of_the_last_calibration_check'];
+        // Для переменных ниже надо убрать расширения файлов т.е обрезать 4 символа с конца строки
         $PI_scheme = $_POST['PI_scheme'];
         $External_wiring_diagram = $_POST['External_wiring_diagram'];
         $layout_plan = $_POST['layout_plan'];
         $Installation_drawing = $_POST['Installation_drawing'];
+        // Уберу расширение файлов
+        $PI_scheme = substr($PI_scheme,0,strlen($PI_scheme) - 4);
+        $External_wiring_diagram = substr($External_wiring_diagram,0,strlen($External_wiring_diagram) - 4);
+        $layout_plan = substr($layout_plan,0,strlen($layout_plan) - 4);
+        $Installation_drawing = substr($Installation_drawing,0,strlen($Installation_drawing) - 4);
         // Надо высчитать диапазон $Beginning_of_range + $End_of_range
         $Measuring_range = $Beginning_of_range . '...' . $End_of_range;
     ?>

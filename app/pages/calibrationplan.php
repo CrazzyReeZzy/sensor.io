@@ -50,27 +50,29 @@
         </tr>
         <?php
 			while ($name =  mysqli_fetch_assoc($count)) {
-			echo  '<tr>';
-			echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
-			echo  '<th>' . $name['Parameter name']  .'</th>';
-			echo  '<th>' . $name['Factory number']  .'</th>';
-            echo  '<th>' . $name['Sensor type']  .'</th>';
-            echo  '<th>' . $name['Measuring range']  .'</th>';
-            echo  '<th>' . $name['Intertesting interval']  .'</th>';
-            echo  '<th>' . $name['Verification/Calibration']  .'</th>';
-            echo  '<th>' . $name['Previous calibration']  .'</th>';
-            
+            // Выводим только те датчики, которые подлежат поверке!
             trim($name['Verification/Calibration']);
-            if ($name['Verification/Calibration'] == 'К' || $name['Verification/Calibration'] == 'Подлежит'){
-                if ( strlen($name['Previous calibration']) > 0 ){
-                    trim($name['Previous calibration']);
-                    $year = substr($name['Previous calibration'],strlen($name['Previous calibration'])-1);
-                    $new_year = $year + $name['Intertesting interval'];
-                    $next_year = substr($name['Previous calibration'],0,strlen($name['Previous calibration'])-1) . $new_year;
-                    echo  '<th>' . $next_year .'</th>';
+            if ($name['Verification/Calibration'] == 'Подлежит'){
+                echo  '<tr>';
+                echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+                echo  '<th>' . $name['Parameter name']  .'</th>';
+                echo  '<th>' . $name['Factory number']  .'</th>';
+                echo  '<th>' . $name['Sensor type']  .'</th>';
+                echo  '<th>' . $name['Measuring range']  .'</th>';
+                echo  '<th>' . $name['Intertesting interval']  .'</th>';
+                echo  '<th>' . $name['Verification/Calibration']  .'</th>';
+                echo  '<th>' . $name['Previous calibration']  .'</th>';
+                
+                if ($name['Verification/Calibration'] == 'Подлежит'){
+                    if ( strlen($name['Previous calibration']) > 0 ){
+                        trim($name['Previous calibration']);
+                        $year = substr($name['Previous calibration'],strlen($name['Previous calibration'])-1);
+                        $new_year = $year + $name['Intertesting interval'];
+                        $next_year = substr($name['Previous calibration'],0,strlen($name['Previous calibration'])-1) . $new_year;
+                        echo  '<th>' . $next_year .'</th>';
+                    }
                 }
             }
-
 			//echo  '<th>' . $name['Next verification']  .'</th>';
 			echo '</tr>';
 			}

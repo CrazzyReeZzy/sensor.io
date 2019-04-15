@@ -155,6 +155,7 @@
 				 <th>Диапазон измерений</th>
 			 </tr>
 				<?php
+					require_once "../php/fun_file.php";
 					while ($name =  mysqli_fetch_assoc($count)) {
 						echo  '<tr>';
 						echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
@@ -162,7 +163,8 @@
 						echo  '<th>' . $name['Parameter name']  .'</th>';
 						echo  '<th>' . $name['Factory number']  .'</th>';
 						echo  '<th>' . $name['Sensor type']  .'</th>';
-						echo  '<th>' . '<a href = "../test.pdf">' . $name['PI scheme'] . '</a>' .'</th>';
+						$link_PI_scheme = file_excess($name['PI scheme'],1);
+						echo  '<th>' . '<a href = " ' . $link_PI_scheme . ' "> ' . $name['PI scheme'] . '</a>' .'</th>';
 						echo  '<th>' . '<a href = "../test.pdf">' . $name['External wiring diagram'] . '</a>' .'</th>';
 						echo  '<th>' . '<a href = "../test.pdf">' . $name['layout plan'] . '</a>' .'</th>';
 						echo  '<th>' . '<a href = "../test.pdf">'. $name['Installation drawing'] . '</a>' .'</th>';
