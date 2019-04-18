@@ -170,12 +170,21 @@
 						echo  '<th>' . '<a href = "../test.pdf">'. $name['Installation drawing'] . '</a>' .'</th>';
 						echo  '<th>' . $name['Commissioning date']  .'</th>';
 						echo  '<th>' . $name['Previous calibration']  .'</th>';
-						echo  '<th>' . $name['Verification Protocol Number']  .'</th>';
-						echo  '<th>' . $name['Next verification']  .'</th>';
+						echo  '<th>' . $name['Verification Protocol Number']  .'</th>'; // Номер протокола поверка
+						// Расчитаем дату следующей поверки
+						if ( strlen($name['Previous calibration']) > 0 ){
+							trim($name['Previous calibration']);
+							$year = substr($name['Previous calibration'],strlen($name['Previous calibration'])-1);
+							$new_year = $year + $name['Intertesting interval'];
+							$next_year = substr($name['Previous calibration'],0,strlen($name['Previous calibration'])-1) . $new_year;
+							//echo  '<th>' . $next_year .'</th>';
+						}
+						echo  '<th>' . $next_year  .'</th>';
+						//echo  '<th>' . $name['Next verification']  .'</th>'; // Следующая поверка
 						echo  '<th>' . $name['Unit parameter']  .'</th>';
 						echo  '<th>' . $name['Beginning of range']  .'</th>';
 						echo  '<th>' . $name['End of range']  .'</th>';
-						echo  '<th>' . $name['Intertesting interval']  .'</th>';
+						echo  '<th>' . $name['Intertesting interval']  .'</th>'; // Межповерочный интервал
 						echo  '<th>' . $name['Measured parameter']  .'</th>';
 						echo  '<th>' . $name['Date of the last calibration check']  .'</th>';
 						echo  '<th>' . $name['Verification/Calibration']  .'</th>';

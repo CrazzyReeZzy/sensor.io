@@ -42,7 +42,7 @@
                  <th>Заводской номер</th>
                  <th>Тип датчика</th>
                  <th>Диапазон измерений</th>
-                 <!-- <th>Класс точности</th> -->
+                 <th>Класс точности</th>
 				 <th>Межповерочный интервал</th>
 				 <th>Поверка/Калибровка</th>
                  <th>Предыдущая поверка/калибровка</th>
@@ -59,6 +59,7 @@
                 echo  '<th>' . $name['Factory number']  .'</th>';
                 echo  '<th>' . $name['Sensor type']  .'</th>';
                 echo  '<th>' . $name['Measuring range']  .'</th>';
+                echo  '<th>' . $name['Accuracy class']  .'</th>';
                 echo  '<th>' . $name['Intertesting interval']  .'</th>';
                 echo  '<th>' . $name['Verification/Calibration']  .'</th>';
                 echo  '<th>' . $name['Previous calibration']  .'</th>';
