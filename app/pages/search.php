@@ -165,7 +165,8 @@
 						echo  '<th>' . $name['Sensor type']  .'</th>';
 						$link_PI_scheme = file_excess($name['PI scheme'],1);
 						echo  '<th>' . '<a href = " ' . $link_PI_scheme . ' "> ' . $name['PI scheme'] . '</a>' .'</th>';
-						echo  '<th>' . '<a href = "../test.pdf">' . $name['External wiring diagram'] . '</a>' .'</th>';
+						$link_External_wiring_diagram = file_excess($name['External wiring diagram'],2);
+						echo  '<th>' . '<a href = " ' . $link_External_wiring_diagram . ' "> '. $name['External wiring diagram'] . '</a>' .'</th>';
 						echo  '<th>' . '<a href = "../test.pdf">' . $name['layout plan'] . '</a>' .'</th>';
 						echo  '<th>' . '<a href = "../test.pdf">'. $name['Installation drawing'] . '</a>' .'</th>';
 						echo  '<th>' . $name['Commissioning date']  .'</th>';
