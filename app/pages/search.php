@@ -167,7 +167,8 @@
 						echo  '<th>' . '<a href = " ' . $link_PI_scheme . ' "> ' . $name['PI scheme'] . '</a>' .'</th>';
 						$link_External_wiring_diagram = file_excess($name['External wiring diagram'],2);
 						echo  '<th>' . '<a href = " ' . $link_External_wiring_diagram . ' "> '. $name['External wiring diagram'] . '</a>' .'</th>';
-						echo  '<th>' . '<a href = "../test.pdf">' . $name['layout plan'] . '</a>' .'</th>';
+						$link_layout_plan = file_excess($name['layout plan'],3);
+						echo  '<th>' . '<a href = " ' . $link_layout_plan . ' "> ' . $name['layout plan'] . '</a>' .'</th>';
 						echo  '<th>' . '<a href = "../test.pdf">'. $name['Installation drawing'] . '</a>' .'</th>';
 						echo  '<th>' . $name['Commissioning date']  .'</th>';
 						echo  '<th>' . $name['Previous calibration']  .'</th>';

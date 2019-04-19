@@ -6,8 +6,7 @@ function file_excess($file_name,$number_colon) {
         $number_lun = substr($file_name,strlen($file_name)-1); // число после буквы л 1070.01-010-СУ.01 л. 4 -- 4
         $file_name = substr($file_name,0,strlen($file_name)-3);
         $file_name = $file_name . $number_lun;// Название файла без точки в формате 1070.01-010-СУ.01 л4
-        // Из предыдущей строки надо взять 4 и пятый символ c конца строки
-        $number_dir = substr($file_name,0,strlen($file_name)-2);
+        $number_dir = substr($file_name,0,strlen($file_name)-2); // Из предыдущей строки надо взять 4 и пятый символ c конца строки
         $number_dir = substr($number_dir,17,strlen($number_dir)-2); // Получил чистую цифру
         trim($number_dir);
         // В данном столбце она может быть 01 или 13
@@ -19,11 +18,70 @@ function file_excess($file_name,$number_colon) {
         }
     }
     if ($number_colon == 2){
-        $file_name = substr($file_name,0,strlen($file_name)-2);
-        $file_name = $file_name . $number_dir;
-        $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.02 Схемы электрические/1070.01-010-СУ.02/' . $file_name . '.pdf';
+        // Опишем алгоритм
+        //Сначала вырежем последнее два символа и сравнением узнаем что же мы вырезали
+        //Потом начиная с начала строки вырежем 2 символа
+        if (strlen($file_name) > 25) {
+            $file_name_change = substr($file_name,strlen($file_name)-1); // Вытаскиваю цифру изм
+            $file_name_letter = substr($file_name,22); // вытаскиваю цифру л
+            $file_name_letter = substr($file_name_letter,0,1);// вытаскиваю цифру л
+            //Вытаскиваю СУ.04 --> 04
+            $number_dir = substr($file_name,17,strlen($file_name)-10); // Из предыдущей строки надо взять 4 и пятый символ c конца строки
+            $number_dir = substr($number_dir,0,3); // Получил чистую цифру
+            if ($number_dir == 04){
+                $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.04 Документация по привязке ПТК к полевому уровню/';
+               // Логика для цифры изменения --> 4 or 3
+                if ($file_name_change == 4){
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.04 Документация по привязке ПТК к полевому уровню/1070.01-010-СУ.04 изм.4/';
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.04 Документация по привязке ПТК к полевому уровню/1070.01-010-СУ.04 изм.4/' . $file_name . '.pdf';
+                }
+                if ($file_name_change == 3){
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.04 Документация по привязке ПТК к полевому уровню/1070.01-010-СУ.04 изм.3/';
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.04 Документация по привязке ПТК к полевому уровню/1070.01-010-СУ.04 изм.3/' . $file_name . '.pdf';
+                }
+                //Л может быть --> 4 or 2 or 38
+            }
+        }
+        //$file_name = $file_name . $number_dir;
+        else {
+            $file_name_letter = substr($file_name,strlen($file_name)-1); // вытаскиваю цифру л
+            $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.04 Документация по привязке ПТК к полевому уровню/1070.01-010-СУ.04/' . $file_name . '.pdf';
+        }
+    }
+    if ($number_colon == 3){
+        // Опишем алгоритм
+        //Сначала вырежем последнее два символа и сравнением узнаем что же мы вырезали
+        //Потом начиная с начала строки вырежем 2 символа
+        //if (strlen($file_name) > 0) {
+            $file_name_change = substr($file_name,strlen($file_name)-1); // Вытаскиваю цифру изм
+            $file_name_letter = substr($file_name,22); // вытаскиваю цифру л
+            $file_name_letter = substr($file_name_letter,0,1);// вытаскиваю цифру л
+            //Вытаскиваю СУ.04 --> 04
+            $number_dir = substr($file_name,17,strlen($file_name)-10); // Из предыдущей строки надо взять 4 и пятый символ c конца строки
+            $number_dir = substr($number_dir,0,3); // Получил чистую цифру
+            if ($number_dir == 05){
+                $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.05 Планы расположения оборудования КИП и А/';
+               // Логика для цифры изменения --> 4 or 3
+                if ($file_name_change == 7){
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.05 Планы расположения оборудования КИП и А/1070.01-010-СУ.05 изм.7/';
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.05 Планы расположения оборудования КИП и А/1070.01-010-СУ.05 изм.7/' . $file_name . '.pdf';
+                }
+                if ($file_name_change == 3){
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.05 Планы расположения оборудования КИП и А/1070.01-010-СУ.05 изм.7/';
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.05 Планы расположения оборудования КИП и А/1070.01-010-СУ.05 изм.7/' . $file_name . '.pdf';
+                }
+                //Л может быть --> 4 or 2 or 38
+            }
+        //}
+        //$file_name = $file_name . $number_dir;
+        else {
+            $file_name_letter = substr($file_name,strlen($file_name)-1); // вытаскиваю цифру л
+            $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.04 Документация по привязке ПТК к полевому уровню/1070.01-010-СУ.04/' . $file_name . '.pdf';
+        }
     }
     return $link;
 }
 //1070.01-010-СУ.01 л. 4
+//1070.01-010-СУ.04 л3
+//1070.01-010-СУ.04 л2 изм.4
 ?>
