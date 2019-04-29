@@ -85,5 +85,7 @@
 <?php
      if ( isset($name['Previous calibration']) ){
         echo "Значение есть";
-     } 
+     }    
 ?>
+
+<?php mysqli_close($connection);  ?>

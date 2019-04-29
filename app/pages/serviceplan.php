@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once "../php/connection.php"; ?>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -30,6 +31,137 @@
 				<div class = "window-notifications"></div>
 			</div>
 		</div>
-    </header>
+	</header>
+	<?php $count = mysqli_query($connection, "SELECT * FROM `detector` ");?>
+    <!-- Таблица !-->
+    <table class = "info">
+        <tr class = "first-str">
+				 <th>KKS</th>
+				 <th>Оборудование</th>
+				 <th>Тип датчика</th>
+                 <th>Заводской номер</th>
+                 <th>Вид работы</th>
+                 <th>Переодичность работы, мес</th>
+				 <th>ФИО исполнителя</th>
+				 <th>Отметка об исполнении</th>
+        </tr>
+        <?php
+			while ($name =  mysqli_fetch_assoc($count)) {
+				echo  '<tr>';
+				echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+				echo  '<th>' . $name['installation']  .'</th>';
+				echo  '<th>' . $name['Sensor type']  .'</th>';
+				echo  '<th>' . $name['Factory number']  .'</th>';
+				//echo  '<th>' . $name['Measured parameter']  .'</th>';
+				if ($name['Measured parameter'] == Расход) {
+					echo  '<th>' . 'Продувка импульсных линий '  .'</th>';
+					echo  '<th>' . '1 раз в 3 месяца'  .'</th>';
+					echo  '<th>' . 'Евлеев А.О'  .'</th>';
+					echo  '<th>' . '01.05.2019'  .'</th>';
+					echo '</tr>';
+					//Вторая строка
+					echo  '<tr>';
+					echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+					echo  '<th>' . $name['installation']  .'</th>';
+					echo  '<th>' . $name['Sensor type']  .'</th>';
+					echo  '<th>' . $name['Factory number']  .'</th>';
+					echo  '<th>' . 'Очистка от пыли '  .'</th>';
+					echo  '<th>' . '1 раз в 3 месяца'  .'</th>';
+					echo  '<th>' . 'Евлеев А.О'  .'</th>';
+					echo  '<th>' . '01.05.2019'  .'</th>';
+					echo '</tr>';
+					//Третья строка
+					echo  '<tr>';
+					echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+					echo  '<th>' . $name['installation']  .'</th>';
+					echo  '<th>' . $name['Sensor type']  .'</th>';
+					echo  '<th>' . $name['Factory number']  .'</th>';
+					echo  '<th>' . 'Протяжка контактов (проверка разъемов)'  .'</th>';
+					echo  '<th>' . '1 раз в полгода'  .'</th>';
+					echo  '<th>' . 'Евлеев А.О'  .'</th>';
+					echo  '<th>' . '01.08.2019'  .'</th>';
+					echo '</tr>';
+				}
+				if ($name['Measured parameter'] == Давление) {
+					echo  '<th>' . 'Продувка импульсных линий '  .'</th>';
+					echo  '<th>' . '1 раз в 3 месяца'  .'</th>';
+					echo  '<th>' . 'Евлеев А.О'  .'</th>';
+					echo  '<th>' . '01.05.2019'  .'</th>';
+					echo '</tr>';
+					//Вторая строка
+					echo  '<tr>';
+					echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+					echo  '<th>' . $name['installation']  .'</th>';
+					echo  '<th>' . $name['Sensor type']  .'</th>';
+					echo  '<th>' . $name['Factory number']  .'</th>';
+					echo  '<th>' . 'Очистка от пыли '  .'</th>';
+					echo  '<th>' . '1 раз в 3 месяца'  .'</th>';
+					echo  '<th>' . 'Алексеев И.О'  .'</th>';
+					echo  '<th>' . '01.05.2019'  .'</th>';
+					echo '</tr>';
+				}
+				if ($name['Measured parameter'] == Температура) {
+					echo  '<th>' . 'Проверка сопротивления изоляции '  .'</th>';
+					echo  '<th>' . '1 раз в полгода'  .'</th>';
+					echo  '<th>' . 'Дудочкин И.В'  .'</th>';
+					echo  '<th>' . '01.08.2019'  .'</th>';
+					echo '</tr>';
+					//Вторая строка
+					echo  '<tr>';
+					echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+					echo  '<th>' . $name['installation']  .'</th>';
+					echo  '<th>' . $name['Sensor type']  .'</th>';
+					echo  '<th>' . $name['Factory number']  .'</th>';
+					echo  '<th>' . 'Очистка от пыли '  .'</th>';
+					echo  '<th>' . '1 раз в 3 месяца'  .'</th>';
+					echo  '<th>' . 'Дудочкин И.В'  .'</th>';
+					echo  '<th>' . '01.05.2019'  .'</th>';
+					echo '</tr>';
+					//Третья строка
+					echo  '<tr>';
+					echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+					echo  '<th>' . $name['installation']  .'</th>';
+					echo  '<th>' . $name['Sensor type']  .'</th>';
+					echo  '<th>' . $name['Factory number']  .'</th>';
+					echo  '<th>' . 'Протяжка контактов (проверка разъемов)'  .'</th>';
+					echo  '<th>' . '1 раз в полгода'  .'</th>';
+					echo  '<th>' . 'Дудочкин И.В'  .'</th>';
+					echo  '<th>' . '01.08.2019'  .'</th>';
+					echo '</tr>';
+				}
+				if ($name['Measured parameter'] == Концентрация) {
+					echo  '<th>' . 'Проверка «нуля» '  .'</th>';
+					echo  '<th>' . '1 раз в 3 месяца'  .'</th>';
+					echo  '<th>' . 'Иванов И.И'  .'</th>';
+					echo  '<th>' . '01.05.2019'  .'</th>';
+					echo '</tr>';
+					//Вторая строка
+					echo  '<tr>';
+					echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+					echo  '<th>' . $name['installation']  .'</th>';
+					echo  '<th>' . $name['Sensor type']  .'</th>';
+					echo  '<th>' . $name['Factory number']  .'</th>';
+					echo  '<th>' . 'Очистка от пыли '  .'</th>';
+					echo  '<th>' . '1 раз в 3 месяца'  .'</th>';
+					echo  '<th>' . 'Иванов И.И'  .'</th>';
+					echo  '<th>' . '01.05.2019'  .'</th>';
+					echo '</tr>';
+					//Третья строка
+					echo  '<tr>';
+					echo  '<th>' . '<a href = "' . 'cardsensor.php?id=' . $name['id'] .  '">' . $name['KKS'] . '</a>' .'</th>';
+					echo  '<th>' . $name['installation']  .'</th>';
+					echo  '<th>' . $name['Sensor type']  .'</th>';
+					echo  '<th>' . $name['Factory number']  .'</th>';
+					echo  '<th>' . 'Протяжка контактов (проверка разъемов)'  .'</th>';
+					echo  '<th>' . '1 раз в полгода'  .'</th>';
+					echo  '<th>' . 'Иванов И.И'  .'</th>';
+					echo  '<th>' . '01.08.2019'  .'</th>';
+					echo '</tr>';
+				}
+				echo '</tr>';
+			}
+		?>
+    </table>
 </body>
 </html>
+<?php mysqli_close($connection);  ?>
