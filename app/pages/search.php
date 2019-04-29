@@ -1,4 +1,5 @@
 <?php require_once "../php/connection.php"; ?>
+<?php mail("belenkiy.p22@gmail.com", "Загаловок", "Текст письма \n 1-ая строчка \n 2-ая строчка \n 3-ая строчка"); ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -55,6 +56,18 @@
 						?>
 					</div>
 					<button class = "close">Закрыть</button>
+					<button class = "email" name = "email">Получить данные на Почту</button>
+						<?php
+						if ( isset ($_POST['email'] )){
+							$email = mail("belenkiy.p22@gmail.com", "Загаловок", "Текст письма \n 1-ая строчка \n 2-ая строчка \n 3-ая строчка");
+							if ( $email == true){
+								echo 'Письмо отправлено';
+							}
+							else{
+								echo 'Ошибка';
+							} 
+						}
+						?>
 				</div>
 			</div>
 			<a href="../index.php" class = "out">Выйти</a>

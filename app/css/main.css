@@ -85,6 +85,22 @@ body {
           cursor: pointer; }
           .header .wrap-header .notifications .window-notifications .close:hover {
             border-color: #2ecc71; }
+        .header .wrap-header .notifications .window-notifications .email {
+          border: 0;
+          background: none;
+          display: block;
+          margin: 20px auto;
+          text-align: center;
+          border: 2px solid #3498db;
+          padding: 14px 10px;
+          width: 200px;
+          outline: none;
+          color: white;
+          border-radius: 24px;
+          transition: 0.25s;
+          cursor: pointer; }
+          .header .wrap-header .notifications .window-notifications .email:hover {
+            border-color: #2ecc71; }
     .header .wrap-header .out {
       margin-left: auto;
       border: 0;
