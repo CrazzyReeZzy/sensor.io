@@ -36,7 +36,6 @@
 						<?php $problem = mysqli_query($connection, "SELECT * FROM `detector` ");?>
 						<?php
 							while ($item =  mysqli_fetch_assoc($problem)) {
-
 								trim($item['Verification/Calibration']);
 								if ($item['Verification/Calibration'] == 'К' || $item['Verification/Calibration'] == 'Подлежит'){
 									if ( strlen($item['Previous calibration']) > 0 ){
