@@ -17,8 +17,8 @@ $mail = new PHPMailer;
 $mail->isSMTP(); 
 $mail->Host = 'smtp.yandex.ru';  
 $mail->SMTPAuth = true;                      
-$mail->Username = 'delay.il'; // Ваш логин в Яндексе. Именно логин, без @yandex.ru
-$mail->Password = 'reezzywow74'; // Ваш пароль
+$mail->Username = ''; // Ваш логин в Яндексе. Именно логин, без @yandex.ru
+$mail->Password = ''; // Ваш пароль
 $mail->SMTPSecure = 'ssl';                            
 $mail->Port = 465;
 $mail->setFrom('delay.il@ya.ru'); // Ваш Email
