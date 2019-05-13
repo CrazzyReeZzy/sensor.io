@@ -220,6 +220,11 @@
         $Previous_calibration = $_POST['Previous_calibration'];
         $Next_verification = $_POST['Next_verification'];
         $Date_of_the_last_calibration_check = $_POST['Date_of_the_last_calibration_check'];
+        // Приведение даты в подобающий формат
+        $Date_of_the_last_calibration_check = date("d.m.Y",strtotime($Date_of_the_last_calibration_check));
+        $Next_verification = date("d.m.Y",strtotime($Next_verification));
+        $Commissioning_date = date("d.m.Y",strtotime($Commissioning_date));
+        $Previous_calibration = date("d.m.Y",strtotime($Previous_calibration));
         // Для переменных ниже надо убрать расширения файлов т.е обрезать 4 символа с конца строки
         $PI_scheme = $_POST['PI_scheme'];
         $External_wiring_diagram = $_POST['External_wiring_diagram'];
