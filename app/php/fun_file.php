@@ -1,7 +1,7 @@
 <?php
 function file_excess($file_name,$number_colon) {
     trim($file_name);
-    $link = '../documents/1070.01-010-СУ/';
+    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.03 Установочные чертежи/1070.01-010-СУ.03/1070.01-010-СУ.03 л2.pdf';
     if ($number_colon == 1){
         $number_lun = substr($file_name,strlen($file_name)-1); // число после буквы л 1070.01-010-СУ.01 л. 4 -- 4
         $file_name = substr($file_name,0,strlen($file_name)-3);
@@ -77,6 +77,39 @@ function file_excess($file_name,$number_colon) {
         else {
             $file_name_letter = substr($file_name,strlen($file_name)-1); // вытаскиваю цифру л
             $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.04 Документация по привязке ПТК к полевому уровню/1070.01-010-СУ.04/' . $file_name . '.pdf';
+        }
+    }
+    if ($number_colon == 4){
+        // Опишем алгоритм
+        //Сначала вырежем последнее два символа и сравнением узнаем что же мы вырезали
+        //Потом начиная с начала строки вырежем 2 символа
+        //1070.01-010-СУ.03 л9 изм.2
+        //C:\home\documentation\www\openserver\OSPanel\domains\sensor.io\app\documents\1070.01-010-СУ\1070.01-010-СУ.03 Установочные чертежи\1070.01-010-СУ.03
+        //if (strlen($file_name) > 0) {
+            $file_name_change = substr($file_name,strlen($file_name)-1); // Вытаскиваю цифру изм
+            $file_name_letter = substr($file_name,22); // вытаскиваю цифру л
+            $file_name_letter = substr($file_name_letter,0,1);// вытаскиваю цифру л
+            //Вытаскиваю СУ.04 --> 04
+            $number_dir = substr($file_name,17,strlen($file_name)-10); // Из предыдущей строки надо взять 4 и пятый символ c конца строки
+            $number_dir = substr($number_dir,0,3); // Получил чистую цифру
+            if ($number_dir == 03){
+                $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.03 Установочные чертежи/';
+               // Логика для цифры изменения --> 4 or 3
+                if ($file_name_change == 2){
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.03 Установочные чертежи/1070.01-010-СУ.03 изм.2/';
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.03 Установочные чертежи/1070.01-010-СУ.03 изм.2/' . $file_name . '.pdf';
+                }
+                if ($file_name_change == 3){
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.03 Установочные чертежи/1070.01-010-СУ.03 изм.3/';
+                    $link = '../documents/1070.01-010-СУ/1070.01-010-СУ.03 Установочные чертежи/1070.01-010-СУ.03 изм.3/' . $file_name . '.pdf';
+                }
+                //Л может быть --> 4 or 2 or 38
+            }
+        //}
+        //$file_name = $file_name . $number_dir;
+        else {
+            $file_name_letter = substr($file_name,strlen($file_name)-1); // вытаскиваю цифру л
+            $link = '../documents/1070.01-010-СУ.03 Установочные чертежи/1070.01-010-СУ.03/' . $file_name . '.pdf';
         }
     }
     return $link;

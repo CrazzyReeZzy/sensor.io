@@ -124,7 +124,7 @@
 		$range = $_POST['range'];
 		$unitparameter = $_POST['unitparameter'];
 		// Сформируем запрос
-		$count = mysqli_query($connection, "SELECT * FROM `detector` WHERE `KKS` LIKE '%$kks%'  AND  `Sensor type` LIKE '%$type%' AND  `Parameter name` LIKE '%$parameter%' AND  `Unit parameter` LIKE '%$unitparameter%' ");
+		$count = mysqli_query($connection, "SELECT * FROM `detector` WHERE `KKS` LIKE '%$kks%'  AND  `Sensor type` LIKE '%$type%' AND  `Parameter name` LIKE '%$parameter%' AND  `Unit parameter` LIKE '%$unitparameter%' AND  `Measuring range` LIKE '%$range%' ");
 		// Проверим была ли найдена хоты бы одна строчка
 		if ( (mysqli_num_rows($count) == 0 ) ) {
 			echo '<br>Нет результатов!'; // Если ничего не было найдено , выведем нет результатов
@@ -170,7 +170,8 @@
 						echo  '<th>' . '<a href = " ' . $link_External_wiring_diagram . ' "> '. $name['External wiring diagram'] . '</a>' .'</th>';
 						$link_layout_plan = file_excess($name['layout plan'],3);
 						echo  '<th>' . '<a href = " ' . $link_layout_plan . ' "> ' . $name['layout plan'] . '</a>' .'</th>';
-						echo  '<th>' . '<a href = "../test.pdf">'. $name['Installation drawing'] . '</a>' .'</th>';
+						$link_Installation_drawing = file_excess($name['Installation drawing'],4);
+						echo  '<th>' . '<a href = " ' . $link_Installation_drawing . ' "> '. $name['Installation drawing'] . '</a>' .'</th>';
 						echo  '<th>' . $name['Commissioning date']  .'</th>';
 						echo  '<th>' . $name['Previous calibration']  .'</th>';
 						echo  '<th>' . $name['Verification Protocol Number']  .'</th>'; // Номер протокола поверка
